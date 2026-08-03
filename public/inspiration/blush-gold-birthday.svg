@@ -1,0 +1,88 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 900 700"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Illustration of a blush and gold birthday lounge with layered balloons and a soft backdrop"
+>
+  <title>Blush and gold birthday lounge styling</title>
+
+  <defs>
+    <linearGradient id="bgbWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f5f91" />
+      <stop offset="52%" stop-color="#a4708f" />
+      <stop offset="100%" stop-color="#f2b7bb" />
+    </linearGradient>
+
+    <radialGradient id="bgbGlow" cx="0.34" cy="0.2" r="0.62">
+      <stop offset="0%" stop-color="#ffdc5c" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#ffdc5c" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="bgbDrape" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9f6eb" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#f9f6eb" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#bgbWash)" />
+  <rect width="900" height="700" fill="url(#bgbGlow)" />
+
+  <!-- soft arch backdrop -->
+  <path
+    d="M280 600V320a170 170 0 0 1 340 0v280Z"
+    fill="url(#bgbDrape)"
+    stroke="#ffdc5c"
+    stroke-opacity="0.4"
+    stroke-width="3"
+  />
+
+  <!-- layered balloon garland -->
+  <g>
+    <g fill="#f2b7bb">
+      <circle cx="286" cy="330" r="44" />
+      <circle cx="450" cy="168" r="46" />
+      <circle cx="614" cy="330" r="44" />
+    </g>
+    <g fill="#ffdc5c">
+      <circle cx="322" cy="248" r="32" />
+      <circle cx="578" cy="248" r="32" />
+      <circle cx="450" cy="96" r="26" />
+      <circle cx="268" cy="410" r="26" />
+      <circle cx="632" cy="410" r="26" />
+    </g>
+    <g fill="#f9f6eb" fill-opacity="0.82">
+      <circle cx="384" cy="196" r="28" />
+      <circle cx="516" cy="196" r="28" />
+      <circle cx="300" cy="290" r="20" />
+      <circle cx="600" cy="290" r="20" />
+    </g>
+    <g fill="#f47292" fill-opacity="0.85">
+      <circle cx="352" cy="140" r="18" />
+      <circle cx="548" cy="140" r="18" />
+    </g>
+  </g>
+
+  <!-- lounge seating silhouette -->
+  <g transform="translate(300 448)">
+    <path
+      d="M0 96c0-46 26-72 60-72h180c34 0 60 26 60 72v56H0Z"
+      fill="#f9f6eb"
+      fill-opacity="0.2"
+      stroke="#f9f6eb"
+      stroke-opacity="0.28"
+      stroke-width="2"
+    />
+    <g fill="#ffdc5c" fill-opacity="0.75">
+      <rect x="52" y="56" width="52" height="42" rx="14" />
+      <rect x="196" y="56" width="52" height="42" rx="14" />
+    </g>
+  </g>
+
+  <g fill="#f9f6eb" fill-opacity="0.5">
+    <circle cx="122" cy="212" r="6" />
+    <circle cx="784" cy="252" r="7" />
+    <circle cx="150" cy="584" r="5" />
+    <circle cx="758" cy="602" r="6" />
+  </g>
+</svg>

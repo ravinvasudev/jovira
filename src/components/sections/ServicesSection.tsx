@@ -5,26 +5,29 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="fluid-section"
+      className="fluid-section bg-muted"
       aria-labelledby="services-title"
+      data-choreo
     >
-      <div className="max-w-4xl">
-        <h2
-          id="services-title"
-          className="text-[clamp(1.9rem,4.2vw,3.4rem)] font-semibold tracking-tight text-foreground"
-        >
-          Services Designed Around Your Celebration
+      <div className="max-w-4xl" data-choreo-item data-choreo-delay="90">
+        <p className="jov-kicker bg-muted text-brand-deep">what we do</p>
+        <h2 id="services-title" className="jov-heading mt-4 text-foreground">
+          services that make your event feel effortless and memorable.
         </h2>
-        <p className="mt-3 text-[clamp(1rem,2vw,1.2rem)] leading-8 text-foreground/82">
+        <p className="jov-subcopy mt-4 text-foreground/82">
           Every service starts with consultation and thoughtful planning, then
-          moves into elegant styling that transforms your customer-provided
-          venue with confidence and care.
+          moves into elegant styling that transforms your space into a
+          celebration you can enjoy.
         </p>
       </div>
 
-      <div className="fluid-scroll-row mt-9 flex gap-5 overflow-x-auto pb-4">
-        {services.map((service) => (
-          <ServiceCard key={service.id} service={service} />
+      <div
+        className="fluid-scroll-row mt-10 flex items-start gap-6 overflow-x-auto pb-6 sm:gap-8 md:grid md:grid-cols-3 md:overflow-x-visible"
+        data-choreo-item
+        data-choreo-delay="280"
+      >
+        {services.map((service, index) => (
+          <ServiceCard key={service.id} service={service} index={index} />
         ))}
       </div>
     </section>

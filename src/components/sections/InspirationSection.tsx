@@ -1,4 +1,4 @@
-import { InspirationCard } from "@/components/inspiration/InspirationCard";
+import { InspirationCarousel } from "@/components/inspiration/InspirationCarousel";
 import { inspirationItems } from "@/data/inspiration-items";
 
 export function InspirationSection() {
@@ -7,26 +7,19 @@ export function InspirationSection() {
       id="inspiration"
       className="fluid-section"
       aria-labelledby="inspiration-title"
+      data-choreo
     >
-      <div className="max-w-4xl">
-        <h2
-          id="inspiration-title"
-          className="text-[clamp(1.9rem,4.2vw,3.4rem)] font-semibold tracking-tight text-foreground"
-        >
-          Inspiration from Past Celebrations
+      <div className="max-w-4xl" data-choreo-item data-choreo-delay="90">
+        <p className="jov-kicker bg-muted text-brand-deep">Inspiration</p>
+        <h2 id="inspiration-title" className="jov-heading mt-4 text-foreground">
+          inspiration from moments we’ve already transformed.
         </h2>
-        <p className="mt-3 text-[clamp(1rem,2vw,1.2rem)] leading-8 text-foreground/82 sm:text-lg">
-          Explore décor concepts we’ve styled for birthdays, graduations, and
-          seasonal milestones. Every design is tailored to transform a
-          customer-provided venue with warmth and elegance.
+        <p className="jov-subcopy mt-4 text-foreground/82">
+          Browse the events we’ve styled for a variety of occasions.
         </p>
       </div>
 
-      <div className="mt-10 columns-1 gap-6 md:columns-2">
-        {inspirationItems.map((item) => (
-          <InspirationCard key={item.id} item={item} />
-        ))}
-      </div>
+      <InspirationCarousel items={inspirationItems} />
     </section>
   );
 }

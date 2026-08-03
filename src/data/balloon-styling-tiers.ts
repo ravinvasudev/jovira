@@ -1,0 +1,69 @@
+import type { PackageTier } from "@/types/package-tier";
+
+export const balloonStylingTiers: PackageTier[] = [
+  {
+    id: "signature-starter",
+    name: "Signature",
+    priceFrom: "$249",
+    description:
+      "The essentials, done with real craft — a styled backdrop, a hand-tied garland, and finishing touches that make a small space feel like an occasion.",
+    includes: [
+      "5ft W × 7ft H (approx.) fully styled finish",
+      "One large backdrop, custom-fit to your theme",
+      "One custom theme cut-out — a personalized focal detail",
+      "Hand-tied organic balloon garland to match your theme",
+      "Premium balloons in curated colours",
+      "Delivery, professional setup & takedown",
+    ],
+    recommendedFor:
+      "Birthday dinners, at-home milestones, and small family celebrations.",
+    image: "/packages/signature-starter.jpeg",
+    imageAlt:
+      "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
+    highlighted: true,
+  },
+  {
+    id: "mini-luxe",
+    name: "Mini Luxe",
+    priceFrom: "$349",
+    description:
+      "A layered step up — two coordinated backdrop moments, a personalized touch, and the kind of detail that makes guests reach for their phones.",
+    includes: [
+      "7ft W × 7ft H (approx.) fully styled finish",
+      "Two small backdrops, layered for a full photo moment",
+      "One custom theme cut-out — a personalized focal detail",
+      "Hand-tied organic balloon garland to match your theme",
+      "Premium balloons in curated colours",
+      "Personalized name or age lettering on your backdrop",
+      "Theme foil balloon accents",
+      "Delivery, professional setup & takedown",
+    ],
+    recommendedFor:
+      "Baby showers, graduations, and milestone birthdays that need standout visuals.",
+    image: "/packages/mini-luxe.jpeg",
+    imageAlt:
+      "Statement Jovira balloon arch backdrop framed by two styled photo moments",
+    highlighted: false,
+  },
+  {
+    id: "glam-luxe",
+    name: "Glam Luxe",
+    priceFrom: "$449",
+    description:
+      "An immersive, multi-zone transformation — from a shimmer-lit entrance to a photo wall that carries the theme all the way through.",
+    includes: [
+      "7ft W × 7ft H (approx.) fully styled finish",
+      "One medium and one small backdrop for a layered entrance-to-photo-wall look",
+      "Shimmer wall accent panel for extra light and glamour",
+      "7 ft hand-tied organic balloon garland",
+      "Premium balloons in up to 4 curated colours",
+      "Welcome sign styled to match your theme",
+      "Delivery, professional setup & takedown",
+    ],
+    recommendedFor:
+      "Large seasonal events and once-in-a-lifetime family celebrations.",
+    image: "/packages/glam-luxe.jpeg",
+    imageAlt:
+      "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",
+  },
+];

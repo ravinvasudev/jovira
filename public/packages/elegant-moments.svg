@@ -1,0 +1,132 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 900 700"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Illustration of an elevated Jovira setup with a statement backdrop and two styled photo moments"
+>
+  <title>Jovira Elegant Moments package styling</title>
+
+  <defs>
+    <linearGradient id="emWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10233f" />
+      <stop offset="50%" stop-color="#2f5f91" />
+      <stop offset="100%" stop-color="#4b80b4" />
+    </linearGradient>
+
+    <radialGradient id="emGlow" cx="0.5" cy="0.2" r="0.62">
+      <stop offset="0%" stop-color="#ffdc5c" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ffdc5c" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="emBloom" cx="0.16" cy="0.86" r="0.52">
+      <stop offset="0%" stop-color="#f47292" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#f47292" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="emArch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9f6eb" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#c7ebf2" stop-opacity="0.08" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#emWash)" />
+  <rect width="900" height="700" fill="url(#emGlow)" />
+  <rect width="900" height="700" fill="url(#emBloom)" />
+
+  <!-- statement arch backdrop -->
+  <path
+    d="M300 560V300a150 150 0 0 1 300 0v260Z"
+    fill="url(#emArch)"
+    stroke="#ffdc5c"
+    stroke-opacity="0.45"
+    stroke-width="3"
+  />
+
+  <g stroke="#f9f6eb" stroke-opacity="0.16" stroke-width="2.5" fill="none">
+    <path d="M370 560V304a80 80 0 0 1 160 0v256" />
+    <path d="M430 560V286" />
+  </g>
+
+  <!-- premium balloon styling along the arch -->
+  <g>
+    <g fill="#f2b7bb">
+      <circle cx="306" cy="366" r="34" />
+      <circle cx="450" cy="152" r="40" />
+      <circle cx="594" cy="366" r="34" />
+    </g>
+    <g fill="#95c8fa">
+      <circle cx="326" cy="290" r="28" />
+      <circle cx="380" cy="204" r="32" />
+      <circle cx="574" cy="290" r="28" />
+      <circle cx="520" cy="204" r="32" />
+    </g>
+    <g fill="#ffdc5c">
+      <circle cx="300" cy="440" r="24" />
+      <circle cx="352" cy="244" r="20" />
+      <circle cx="548" cy="244" r="20" />
+      <circle cx="600" cy="440" r="24" />
+      <circle cx="450" cy="98" r="22" />
+    </g>
+    <g fill="#c7ebf2" fill-opacity="0.9">
+      <circle cx="410" cy="176" r="18" />
+      <circle cx="492" cy="176" r="18" />
+      <circle cx="316" cy="330" r="16" />
+      <circle cx="584" cy="330" r="16" />
+    </g>
+  </g>
+
+  <!-- two styled photo moments -->
+  <g transform="translate(96 396)">
+    <rect
+      width="152"
+      height="164"
+      rx="60"
+      fill="#f9f6eb"
+      fill-opacity="0.16"
+      stroke="#f9f6eb"
+      stroke-opacity="0.3"
+      stroke-width="2"
+    />
+    <circle cx="76" cy="70" r="30" fill="#f2b7bb" fill-opacity="0.85" />
+    <path
+      d="M28 132c14-26 34-38 48-38s34 12 48 38"
+      fill="none"
+      stroke="#ffdc5c"
+      stroke-opacity="0.7"
+      stroke-width="3"
+    />
+  </g>
+
+  <g transform="translate(652 396)">
+    <rect
+      width="152"
+      height="164"
+      rx="60"
+      fill="#f9f6eb"
+      fill-opacity="0.16"
+      stroke="#f9f6eb"
+      stroke-opacity="0.3"
+      stroke-width="2"
+    />
+    <circle cx="76" cy="70" r="30" fill="#95c8fa" fill-opacity="0.9" />
+    <path
+      d="M28 132c14-26 34-38 48-38s34 12 48 38"
+      fill="none"
+      stroke="#ffdc5c"
+      stroke-opacity="0.7"
+      stroke-width="3"
+    />
+  </g>
+
+  <g fill="none" stroke="#ffdc5c" stroke-opacity="0.32" stroke-width="2.5">
+    <path d="M-20 606c160-56 300 34 470-16s280-70 470-8" />
+  </g>
+
+  <g fill="#f9f6eb" fill-opacity="0.5">
+    <circle cx="112" cy="150" r="7" />
+    <circle cx="806" cy="188" r="6" />
+    <circle cx="164" cy="632" r="5" />
+    <circle cx="744" cy="646" r="6" />
+  </g>
+</svg>

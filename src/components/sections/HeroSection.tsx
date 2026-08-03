@@ -1,107 +1,126 @@
+import Image from "next/image";
 import Link from "next/link";
+
+import { SectionDivider } from "@/components/ux/SectionDivider";
+import { buildConsultationHref } from "@/lib/consultation-intent";
+
+const trustPoints = [
+  "Consultation-led Event Planning",
+  "Balloon Installation",
+  "Grab 'n Go Collection",
+] as const;
 
 export function HeroSection() {
   return (
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative min-h-screen overflow-hidden"
+      className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-ink"
     >
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/hero-poster.jpg"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
-
-      <div className="absolute inset-0 bg-[linear-gradient(175deg,rgba(11,22,44,0.72),rgba(11,22,44,0.62)_45%,rgba(11,22,44,0.88))]" />
-
-      <div className="relative z-10 flex min-h-screen flex-col justify-end gap-10 px-[clamp(1.1rem,4vw,4rem)] pb-[clamp(3.2rem,8vh,5.8rem)] pt-28 lg:flex-row lg:items-end lg:justify-between lg:gap-14">
-        <div className="max-w-3xl">
-          <p className="inline-flex items-center rounded-full border border-[#d4af37]/60 bg-[#0b162c]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[#f9f6f0]">
-            Event Styling & Decoration in Canada
-          </p>
-
-          <h1
-            id="hero-title"
-            className="mt-6 text-[clamp(2rem,6.3vw,4.8rem)] font-semibold leading-[1.02] tracking-tight text-[#f9f6f0]"
-          >
-            We transform your space, you make the memories.
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-[clamp(1rem,2vw,1.35rem)] leading-[1.65] text-[#f9f6f0]/90">
-            Jovira brings stress-free consultation, thoughtful theme planning,
-            and elegant setup to your customer-provided venue—so your
-            celebration feels beautifully you.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="#consultation"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-7 py-3 text-sm font-semibold text-[#0b162c] transition hover:bg-[#e1be4e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-            >
-              Book Consultation
-            </Link>
-            <Link
-              href="#inspiration"
-              className="inline-flex items-center justify-center rounded-full border border-[#f9f6f0]/40 bg-[#0b162c]/40 px-7 py-3 text-sm font-semibold text-[#f9f6f0] transition hover:border-brand hover:text-brand"
-            >
-              View Inspiration
-            </Link>
-          </div>
-        </div>
-
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/hero-celebration.svg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          aria-hidden="true"
+          className="parallax-layer object-cover"
+        />
         <div
-          className="fluid-mask relative w-full max-w-xl overflow-hidden border border-white/30 bg-[linear-gradient(145deg,rgba(249,246,240,0.88),rgba(249,246,240,0.65))] p-6 shadow-[0_20px_55px_rgb(11_22_44/35%)]"
-          role="img"
-          aria-label="Preview placeholder of Jovira’s past event styling moments"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,#fff8de_0,#f7efe1_48%)]" />
-          <div className="relative flex flex-wrap gap-4">
-            <div className="h-56 rounded-2xl bg-[linear-gradient(140deg,#e8cfbf,#f8f1ec)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/65">
-                Birthday Styling
-              </p>
-            </div>
-            <div className="h-56 rounded-2xl bg-[linear-gradient(140deg,#f2d9e0,#fff5f2)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/65">
-                Graduation Themes
-              </p>
-            </div>
-            <div className="h-32 w-full rounded-2xl bg-[linear-gradient(140deg,#efe5dc,#fff)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/65">
-                Seasonal Backdrop Concepts
-              </p>
-            </div>
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/55 to-ink/80 md:from-ink/45 md:via-ink/15 md:to-ink/55"
+        />
+        <div aria-hidden className="hero-fluid-overlay fluid-blob">
+          <div className="fluid-blob__media">
+            <Image
+              src="/hero/hero.png"
+              alt=""
+              fill
+              priority
+              style={{ objectFit: "cover" }}
+              aria-hidden="true"
+              // sizes="(max-width: 768px) 100vw, 42rem"
+              className="blob-parallax object-cover"
+            />
           </div>
+          {/* <span
+            aria-hidden
+            className="fluid-blob__veil hero-fluid-overlay__veil"
+          /> */}
         </div>
+      </div>
+
+      <div className="jov-gutter relative pb-[clamp(8.5rem,15vh,11rem)] pt-[clamp(7rem,18vh,11rem)]">
+        <p className="jov-kicker border-sun/45 bg-ink/35 text-xs text-sun backdrop-blur-sm tracking-wide sm:text-sm">
+          Event styling &amp; balloon decoration · Fredericton
+        </p>
+
+        <h1
+          id="hero-title"
+          className="jov-heading mt-6 max-w-[18ch] text-surface"
+        >
+          We transform your
+          <br /> space.{" "}
+          <span>
+            You make
+            <br /> the memories.
+          </span>
+        </h1>
+
+        <p className="jov-subcopy mt-6 text-surface/88">&nbsp;</p>
+
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Link
+            href={buildConsultationHref({
+              flow: "consultation",
+              source: "hero-request-free-consultation",
+            })}
+            className="jov-cta jov-cta-primary"
+          >
+            Request free Consultation
+          </Link>
+          <Link href="#inspiration" className="jov-cta jov-cta-ghost">
+            See Our Inspiration
+          </Link>
+        </div>
+
+        <ul className="mt-9 flex flex-col gap-y-3 text-sm font-medium text-surface/85 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
+          {trustPoints.map((point) => (
+            <li key={point} className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full bg-sun"
+              />
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <a
         href="#services"
-        aria-label="Scroll to services"
-        className="pulse-arrow absolute bottom-6 left-1/2 z-20 -translate-x-1/2 text-brand"
+        aria-label="Scroll to our services"
+        className="pulse-arrow absolute bottom-[clamp(4.25rem,5.5vw,5.75rem)] left-1/2 z-10 -translate-x-1/2 rounded-[4px] p-2 text-sun focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun"
       >
         <svg
-          width="28"
-          height="28"
+          width="30"
+          height="30"
           viewBox="0 0 24 24"
           fill="none"
           aria-hidden="true"
         >
           <path
-            d="M6 9L12 15L18 9"
+            d="M6 9l6 6 6-6"
             stroke="currentColor"
-            strokeWidth="1.8"
+            strokeWidth="1.7"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
         </svg>
       </a>
+
+      <SectionDivider variant="drape" to="bg-muted" flip />
     </section>
   );
 }

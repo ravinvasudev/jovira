@@ -1,0 +1,96 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 900 700"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Illustration of an evergreen Christmas gathering with greenery garlands and champagne accents"
+>
+  <title>Evergreen Christmas gathering styling</title>
+
+  <defs>
+    <linearGradient id="eccWash" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10233f" />
+      <stop offset="52%" stop-color="#1f5152" />
+      <stop offset="100%" stop-color="#2f5f91" />
+    </linearGradient>
+
+    <radialGradient id="eccGlow" cx="0.5" cy="0.18" r="0.6">
+      <stop offset="0%" stop-color="#ffdc5c" stop-opacity="0.36" />
+      <stop offset="100%" stop-color="#ffdc5c" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="eccBloom" cx="0.18" cy="0.84" r="0.5">
+      <stop offset="0%" stop-color="#c7ebf2" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#c7ebf2" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#eccWash)" />
+  <rect width="900" height="700" fill="url(#eccGlow)" />
+  <rect width="900" height="700" fill="url(#eccBloom)" />
+
+  <!-- greenery garland sweep -->
+  <g
+    fill="none"
+    stroke="#3f7f6d"
+    stroke-opacity="0.85"
+    stroke-width="30"
+    stroke-linecap="round"
+  >
+    <path d="M60 250c140 130 300 130 390 60s260-110 400-10" />
+  </g>
+  <g
+    fill="none"
+    stroke="#59a189"
+    stroke-opacity="0.5"
+    stroke-width="8"
+    stroke-linecap="round"
+  >
+    <path d="M60 232c140 130 300 130 390 60s260-110 400-10" />
+    <path d="M70 276c136 126 296 126 386 58s258-106 396-8" />
+  </g>
+
+  <!-- ornaments and champagne baubles -->
+  <g>
+    <g fill="#ffdc5c">
+      <circle cx="212" cy="330" r="24" />
+      <circle cx="452" cy="352" r="20" />
+      <circle cx="716" cy="300" r="22" />
+    </g>
+    <g fill="#f9f6eb" fill-opacity="0.9">
+      <circle cx="318" cy="356" r="18" />
+      <circle cx="596" cy="322" r="18" />
+    </g>
+    <g fill="#f2b7bb" fill-opacity="0.85">
+      <circle cx="146" cy="292" r="16" />
+      <circle cx="812" cy="278" r="16" />
+    </g>
+  </g>
+
+  <!-- entrance moment -->
+  <g transform="translate(330 396)">
+    <path
+      d="M0 220V96a120 120 0 0 1 240 0v124Z"
+      fill="#f9f6eb"
+      fill-opacity="0.16"
+      stroke="#ffdc5c"
+      stroke-opacity="0.45"
+      stroke-width="3"
+    />
+    <g fill="none" stroke="#f9f6eb" stroke-opacity="0.26" stroke-width="2.5">
+      <path d="M60 220V104a60 60 0 0 1 120 0v116" />
+    </g>
+    <circle cx="120" cy="72" r="20" fill="#ffdc5c" fill-opacity="0.85" />
+  </g>
+
+  <!-- winter white snow specks -->
+  <g fill="#f9f6eb" fill-opacity="0.6">
+    <circle cx="120" cy="120" r="5" />
+    <circle cx="268" cy="86" r="4" />
+    <circle cx="452" cy="130" r="5" />
+    <circle cx="640" cy="92" r="4" />
+    <circle cx="796" cy="140" r="5" />
+    <circle cx="182" cy="588" r="4" />
+    <circle cx="726" cy="604" r="5" />
+  </g>
+</svg>

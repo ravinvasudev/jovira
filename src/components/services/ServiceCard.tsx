@@ -1,41 +1,103 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useState, type CSSProperties } from "react";
+
+import { getBlobShape } from "@/components/ux/blob-shapes";
 import type { Service } from "@/types/service";
 
 type ServiceCardProps = {
   service: Service;
+  index: number;
 };
 
-export function ServiceCard({ service }: ServiceCardProps) {
+type ServiceModalProps = {
+  service: Service;
+  open: boolean;
+  onClose: () => void;
+};
+
+const ServiceModal = dynamic<ServiceModalProps>(
+  () =>
+    import("@/components/services/ServiceModal").then(
+      (module) => module.ServiceModal,
+    ),
+  {
+    loading: () => null,
+  },
+);
+
+export function ServiceCard({ service, index }: ServiceCardProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const shape = getBlobShape(index);
+
   return (
-    <article className="fluid-card min-w-[min(86vw,23rem)] flex-1 rounded-[2rem_1.3rem_2rem_1.6rem] border border-border bg-surface p-6 shadow-[0_10px_30px_rgba(110,78,56,0.08)] sm:min-w-[22rem] sm:p-7">
-      <h3 className="text-xl font-semibold tracking-tight text-foreground">
-        {service.title}
-      </h3>
+    <article
+      className={`blob-drift ${shape.offset} min-w-[min(84vw,22rem)] flex-1 sm:min-w-84 md:min-w-0 md:max-w-120`}
+      style={{ "--blob-drift": shape.drift } as CSSProperties}
+    >
+      <div
+        className="fluid-blob group relative flex h-[clamp(22rem,44vw,27rem)] flex-col items-center justify-center px-[clamp(2rem,11%,3.25rem)] py-10 text-center"
+        style={
+          {
+            "--blob-from": shape.from,
+            "--blob-to": shape.to,
+          } as CSSProperties
+        }
+      >
+        <div className="fluid-blob__media">
+          <Image
+            src={service.image}
+            alt={service.imageAlt}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 84vw, 22rem"
+            className="blob-parallax object-cover"
+          />
+        </div>
+        <span aria-hidden className="fluid-blob__veil" />
 
-      <p className="mt-3 text-sm leading-7 text-foreground/85">
-        {service.summary}
-      </p>
+        <h3 className="font-display text-2xl font-semibold uppercase tracking-tight text-surface text-balance">
+          {service.title}
+        </h3>
 
-      <div className="mt-5">
-        <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">
-          What’s Included
-        </h4>
-        <ul className="mt-3 space-y-2 text-sm text-foreground/85">
-          {service.deliverables.map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <span
-                aria-hidden
-                className="mt-[0.45rem] inline-block h-1.5 w-1.5 rounded-full bg-brand"
-              />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="mt-2 text-lg font-extrabold tracking-tight text-sun">
+          {service.tagline}
+        </p>
+
+        <p className="bg-ink/25 rounded-md p-0.5 mt-3 line-clamp-3 text-md leading-7 text-surface text-pretty">
+          {service.summary}
+        </p>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          aria-haspopup="dialog"
+          aria-expanded={isOpen}
+          className="blob-reveal mt-5 inline-flex items-center gap-2 rounded-sm border border-sun/60 bg-ink/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-sun transition-all duration-300 ease-(--ease-fluid) hover:bg-sun hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-within:translate-y-0 md:group-focus-within:opacity-100"
+        >
+          Learn more
+          <span className="sr-only">about {service.title}</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M5 12h13M12 5l7 7-7 7"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
 
-      <p className="mt-5 rounded-2xl bg-muted px-4 py-3 text-sm leading-6 text-foreground/85">
-        <span className="font-semibold text-brand-strong">Ideal for:</span>{" "}
-        {service.idealFor}
-      </p>
+      {isOpen ? (
+        <ServiceModal
+          service={service}
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
+      ) : null}
     </article>
   );
 }

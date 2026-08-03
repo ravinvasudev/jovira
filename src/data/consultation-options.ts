@@ -1,16 +1,28 @@
 export const eventTypes = [
-  "Birthday",
+  "Baby Shower",
+  "Birthday - Kids",
+  "Birthday - Adults",
   "Graduation",
-  "Valentine’s Day",
-  "Mother’s Day",
-  "Father’s Day",
-  "Christmas",
-  "Other",
+  "Milestone",
+  "Corporate",
+  "Others",
 ] as const;
 
-export const budgetRanges = [
-  "Under $500",
-  "$500–$1,000",
-  "$1,000–$2,000",
-  "$2,000+",
+export const venueTypes = [
+  "Private Home (Indoor)",
+  "Private Home (Outdoor)",
+  "Restaurant/Bar/Pub (Indoor)",
+  "Restaurant/Bar/Pub (Outdoor)",
+  "Banquet Hall/Event Hall",
+  "Public Outdoor Space/Park",
+  "Others",
+] as const;
+
+export const hearAboutOptions = [
+  "Instagram",
+  "Facebook",
+  "Google Search",
+  "Friend or Family",
+  "Previous Jovira Client",
+  "Others",
 ] as const;

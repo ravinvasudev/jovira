@@ -1,17 +1,22 @@
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SectionChoreography } from "@/components/ux/SectionChoreography";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const displayFont = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Jost({
+  variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -35,9 +40,20 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "Jovira",
   url: "https://www.jovira.ca",
+  logo: "https://www.jovira.ca/jovira-mark.svg",
+  image: "https://www.jovira.ca/hero-celebration.svg",
   description:
     "Consultation-led event styling and decoration service that transforms customer-provided venues in Canada.",
-  areaServed: "Canada",
+  email: "hello@jovira.ca",
+  priceRange: "$$",
+  areaServed: {
+    "@type": "Country",
+    name: "Canada",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "CA",
+  },
   serviceType: "Event Styling & Decoration",
 };
 
@@ -48,10 +64,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en-CA"
+      className={`${displayFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="site-shell min-h-full flex flex-col">
+        <SectionChoreography />
         <SiteHeader />
         <main id="main-content" className="flex-1">
           {children}

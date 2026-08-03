@@ -1,35 +1,47 @@
 import { ConsultationForm } from "@/components/consultation/ConsultationForm";
+import { Suspense } from "react";
 
 export function ConsultationSection() {
   return (
     <section
       id="consultation"
-      className="fluid-section relative overflow-hidden bg-[#0b162c]"
+      className="fluid-section bg-muted"
       aria-labelledby="consultation-title"
+      data-choreo
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_5%,rgba(212,175,55,0.16),transparent_30%),radial-gradient(circle_at_88%_92%,rgba(212,175,55,0.12),transparent_28%)]" />
-
-      <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-        <div className="max-w-xl">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+        <div className="max-w-xl" data-choreo-item data-choreo-delay="40">
+          <p className="jov-kicker bg-surface text-brand-deep">let’s do this</p>
           <h2
             id="consultation-title"
-            className="text-[clamp(1.9rem,4.2vw,3.4rem)] font-semibold tracking-tight text-[#f9f6f0]"
+            className="jov-heading mt-4 text-foreground"
           >
-            Book Your Consultation
+            begin your next celebration.
           </h2>
-          <p className="mt-3 text-[clamp(1rem,2vw,1.2rem)] leading-8 text-[#f9f6f0]/86 sm:text-lg">
+          <p className="jov-subcopy mt-4 text-foreground/84">
             Tell us about your event and style preferences. We’ll guide you
-            through décor options that beautifully transform your
-            customer-provided venue.
+            through options that beautifully transform your space.
           </p>
-          <p className="mt-4 rounded-[1.35rem] border border-[#d4af37]/30 bg-[#13213f]/65 px-4 py-3 text-sm text-[#f9f6f0]/86">
+          <p className="mt-4 rounded-[1.25rem] border border-border bg-surface px-4 py-3 text-sm text-foreground/86">
             We currently style birthdays, graduations, holiday celebrations, and
-            personal milestones across Canada.
+            personal milestones in Fredericton and surrounding areas.
           </p>
         </div>
 
-        <div className="w-full max-w-2xl rounded-[2rem_1.25rem_2rem_1.5rem] border border-[#d4af37]/30 bg-[#f9f6f0] p-6 shadow-[0_16px_45px_rgb(11_22_44/45%)] sm:p-7">
-          <ConsultationForm />
+        <div
+          className="w-full max-w-2xl rounded-[2rem_1.25rem_2rem_1.5rem] border border-border bg-surface p-6 shadow-[0_14px_35px_rgb(16_35_63/14%)] sm:p-7"
+          data-choreo-item
+          data-choreo-delay="170"
+        >
+          <Suspense
+            fallback={
+              <p className="text-sm text-foreground/80">
+                Loading consultation flow...
+              </p>
+            }
+          >
+            <ConsultationForm />
+          </Suspense>
         </div>
       </div>
     </section>

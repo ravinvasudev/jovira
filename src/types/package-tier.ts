@@ -5,5 +5,7 @@ export type PackageTier = {
   description: string;
   includes: string[];
   recommendedFor: string;
+  image: string;
+  imageAlt: string;
   highlighted?: boolean;
 };

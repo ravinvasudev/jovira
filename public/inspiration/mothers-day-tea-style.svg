@@ -1,0 +1,98 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 900 700"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Illustration of a Mother's Day tea-inspired setup with soft draping, florals, and rose tones"
+>
+  <title>Mother’s Day tea-inspired styling</title>
+
+  <defs>
+    <linearGradient id="mdtWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4b80b4" />
+      <stop offset="46%" stop-color="#c98a9a" />
+      <stop offset="100%" stop-color="#f2b7bb" />
+    </linearGradient>
+
+    <radialGradient id="mdtGlow" cx="0.7" cy="0.22" r="0.58">
+      <stop offset="0%" stop-color="#ffdc5c" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#ffdc5c" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="mdtDrape" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9f6eb" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#f9f6eb" stop-opacity="0.08" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#mdtWash)" />
+  <rect width="900" height="700" fill="url(#mdtGlow)" />
+
+  <!-- soft draping -->
+  <path
+    d="M120 0c60 140 20 240 60 380 40 138 20 220-10 320h-170V0Z"
+    fill="url(#mdtDrape)"
+  />
+  <path
+    d="M780 0c-60 140-20 240-60 380-40 138-20 220 10 320h170V0Z"
+    fill="url(#mdtDrape)"
+  />
+
+  <!-- floral cluster -->
+  <g transform="translate(450 250)">
+    <g fill="#f9f6eb" fill-opacity="0.92">
+      <circle cx="0" cy="-84" r="34" />
+      <circle cx="80" cy="-28" r="34" />
+      <circle cx="50" cy="66" r="34" />
+      <circle cx="-50" cy="66" r="34" />
+      <circle cx="-80" cy="-28" r="34" />
+    </g>
+    <circle r="38" fill="#ffdc5c" fill-opacity="0.9" />
+
+    <g fill="#f47292" fill-opacity="0.85">
+      <circle cx="-146" cy="-56" r="20" />
+      <circle cx="150" cy="46" r="20" />
+      <circle cx="-24" cy="150" r="18" />
+    </g>
+  </g>
+
+  <!-- tea table moment -->
+  <g transform="translate(302 470)">
+    <path
+      d="M0 40c0-22 66-40 148-40s148 18 148 40-66 40-148 40S0 62 0 40Z"
+      fill="#f9f6eb"
+      fill-opacity="0.32"
+    />
+    <path d="M28 56c30 84 20 118 16 154h208c-4-36-14-70 16-154-38 20-202 20-240 0Z" fill="#f9f6eb" fill-opacity="0.16" />
+
+    <!-- teacup -->
+    <g transform="translate(104 -2)">
+      <path
+        d="M0 6h72c0 26-16 44-36 44S0 32 0 6Z"
+        fill="#f9f6eb"
+        fill-opacity="0.95"
+      />
+      <path
+        d="M72 14c14-4 22 4 22 12s-10 14-22 10"
+        fill="none"
+        stroke="#f9f6eb"
+        stroke-opacity="0.95"
+        stroke-width="5"
+      />
+      <path
+        d="M-10 56h92"
+        stroke="#ffdc5c"
+        stroke-opacity="0.85"
+        stroke-width="6"
+        stroke-linecap="round"
+      />
+    </g>
+  </g>
+
+  <g fill="#f9f6eb" fill-opacity="0.55">
+    <circle cx="180" cy="150" r="6" />
+    <circle cx="736" cy="188" r="6" />
+    <circle cx="214" cy="616" r="5" />
+    <circle cx="700" cy="630" r="6" />
+  </g>
+</svg>

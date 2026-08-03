@@ -1,0 +1,80 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 900 700"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Illustration of an intimate Jovira styling setup with a small balloon cluster and a dressed side table"
+>
+  <title>Jovira Signature Starter package styling</title>
+
+  <defs>
+    <linearGradient id="ssWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b3a63" />
+      <stop offset="58%" stop-color="#4b80b4" />
+      <stop offset="100%" stop-color="#95c8fa" />
+    </linearGradient>
+
+    <radialGradient id="ssGlow" cx="0.3" cy="0.22" r="0.6">
+      <stop offset="0%" stop-color="#c7ebf2" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#c7ebf2" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="ssBloom" cx="0.8" cy="0.82" r="0.5">
+      <stop offset="0%" stop-color="#f2b7bb" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#f2b7bb" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="ssCloth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9f6eb" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#f9f6eb" stop-opacity="0.06" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#ssWash)" />
+  <rect width="900" height="700" fill="url(#ssGlow)" />
+  <rect width="900" height="700" fill="url(#ssBloom)" />
+
+  <!-- compact balloon cluster -->
+  <g>
+    <circle cx="392" cy="196" r="62" fill="#f2b7bb" fill-opacity="0.94" />
+    <circle cx="490" cy="150" r="44" fill="#95c8fa" />
+    <circle cx="316" cy="150" r="38" fill="#ffdc5c" />
+    <circle cx="470" cy="242" r="34" fill="#c7ebf2" fill-opacity="0.92" />
+    <circle cx="318" cy="248" r="28" fill="#f47292" fill-opacity="0.9" />
+    <circle cx="404" cy="102" r="24" fill="#f9f6eb" fill-opacity="0.7" />
+  </g>
+
+  <!-- balloon ribbons -->
+  <g fill="none" stroke="#f9f6eb" stroke-opacity="0.4" stroke-width="2.5">
+    <path d="M392 258c10 60-14 100-6 156" />
+    <path d="M490 194c6 62 14 104 2 158" />
+    <path d="M316 188c-8 66 4 108 12 164" />
+  </g>
+
+  <!-- dressed side table -->
+  <g transform="translate(258 420)">
+    <path
+      d="M0 44c0-24 84-44 192-44s192 20 192 44-84 44-192 44S0 68 0 44Z"
+      fill="url(#ssCloth)"
+      stroke="#f9f6eb"
+      stroke-opacity="0.26"
+      stroke-width="2"
+    />
+    <path
+      d="M22 60c40 96 26 132 20 176h300c-6-44-20-80 20-176-46 24-294 24-340 0Z"
+      fill="url(#ssCloth)"
+    />
+    <g fill="#ffdc5c" fill-opacity="0.9">
+      <circle cx="112" cy="42" r="12" />
+      <circle cx="192" cy="34" r="14" />
+      <circle cx="272" cy="42" r="12" />
+    </g>
+  </g>
+
+  <g fill="#f9f6eb" fill-opacity="0.45">
+    <circle cx="120" cy="180" r="6" />
+    <circle cx="782" cy="222" r="7" />
+    <circle cx="146" cy="560" r="5" />
+    <circle cx="760" cy="586" r="6" />
+  </g>
+</svg>
