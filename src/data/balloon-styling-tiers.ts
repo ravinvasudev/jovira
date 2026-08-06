@@ -30,7 +30,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "A layered step up — two coordinated backdrop moments, a personalized touch, and the kind of detail that makes guests reach for their phones.",
     includes: [
       "7ft W × 7ft H (approx.) fully styled finish",
-      "Two small backdrops, layered for a full photo moment",
+      "One small and one large backdrop, layered for a full photo moment",
       "One custom theme cut-out — a personalized focal detail",
       "Hand-tied organic balloon garland to match your theme",
       "Premium balloons in curated colours",
@@ -53,7 +53,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "An immersive, multi-zone transformation from a shimmer-lit entrance to a photo wall that carries the theme all the way through.",
     includes: [
       "7ft W × 7ft H (approx.) fully styled finish",
-      "One medium and one small backdrop for a layered entrance-to-photo-wall look",
+      "One medium and one large backdrop for a layered entrance-to-photo-wall look",
       "Shimmer wall accent panel for extra light and glamour",
       "7 ft hand-tied organic balloon garland",
       "Premium balloons in up to 4 curated colours",
