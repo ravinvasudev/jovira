@@ -42,7 +42,7 @@ export const services: Service[] = [
     title: "Grab 'n Go",
     tagline: "Grab the magic, share the joy.",
     summary:
-      "Keeping it lowkey? Pickup a pre-inflated setup from our studio. It’s a simple way to add a elevated touch to your celebration, and it’s ready to go when you are.",
+      "Keeping it lowkey? Pickup a pre-inflated setup from our studio. It’s a simple way to add an elevated touch to your celebration, and it’s ready to go when you are.",
     deliverables: [
       "Seasonal mood and décor board",
       "Cohesive styling for key photo areas",

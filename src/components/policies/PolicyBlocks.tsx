@@ -22,11 +22,17 @@ export function PolicyList({ blocks }: PolicyListProps) {
           <h2 className="text-base font-semibold text-foreground">
             {block.title}
           </h2>
+          <p className="mt-3 space-y-2 pl-5 text-sm text-foreground/84">
+            {block.content}
+          </p>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-foreground/84">
             {block.points.map((point) => (
               <li key={point}>{point}</li>
             ))}
           </ul>
+          <p className="mt-3 space-y-2 pl-5 text-sm text-foreground/84">
+            {block.subContent}
+          </p>
         </article>
       ))}
     </div>

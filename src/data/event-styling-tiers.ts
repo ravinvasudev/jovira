@@ -20,7 +20,7 @@ export const eventStylingTiers: PackageTier[] = [
       "Delivery, professional setup & pickup",
     ],
     recommendedFor:
-      "Once-in-a-lifetime events, and medium-to-large family gatherings.",
+      "Milestone birthdays and anniversaries where every detail from the grand entrance to the styled table needs to feel completely intentional.",
     image: "/packages/elite.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",
@@ -44,7 +44,7 @@ export const eventStylingTiers: PackageTier[] = [
       "Delivery, professional setup & pickup",
     ],
     recommendedFor:
-      "Once-in-a-lifetime events, and medium-to-large family gatherings.",
+      "Grand celebrations — quinceañeras, sweet sixteens, milestone anniversaries where you want a sweeping atmosphere and a memory board guests will linger at all evening.",
     image: "/packages/prestige.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",

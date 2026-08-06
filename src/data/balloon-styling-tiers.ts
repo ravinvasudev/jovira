@@ -16,7 +16,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
+      "First birthdays, baby showers, and intimate milestone celebrations that deserve a polished photo moment without a full production.",
     image: "/packages/signature-starter.jpeg",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -39,7 +39,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
+      "Birthdays and graduations where personalized lettering, foil accents, and layered backdrops make for a shareable, social-ready moment.",
     image: "/packages/mini-luxe.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",
@@ -50,7 +50,7 @@ export const balloonStylingTiers: PackageTier[] = [
     name: "Glam Luxe",
     priceFrom: "$449",
     description:
-      "An immersive, multi-zone transformation — from a shimmer-lit entrance to a photo wall that carries the theme all the way through.",
+      "An immersive, multi-zone transformation from a shimmer-lit entrance to a photo wall that carries the theme all the way through.",
     includes: [
       "7ft W × 7ft H (approx.) fully styled finish",
       "One medium and one small backdrop for a layered entrance-to-photo-wall look",
@@ -61,7 +61,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
+      "Larger gatherings — sweet sixteens, baby showers, and milestone birthdays that call for a shimmer-lit entrance and a fully immersive photo wall.",
     image: "/packages/glam-luxe.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",

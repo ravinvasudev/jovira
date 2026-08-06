@@ -14,7 +14,7 @@ export const grabGoPartyReadyTiers: PackageTier[] = [
       "Custom theme props coordinated to your celebration",
     ],
     recommendedFor:
-      "Last-minute family celebrations.",
+      "Quick-turnaround birthday parties and last-minute celebrations that need a striking, personalized centrepiece ready to go.",
     image: "/grabgoparty/crazy-tower.jpeg",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -34,7 +34,7 @@ export const grabGoPartyReadyTiers: PackageTier[] = [
       "Custom theme props coordinated to your celebration",
     ],
     recommendedFor:
-      "Last-minute family celebrations.",
+      "Hosts who want a photo-worthy backdrop and a personalized statement piece — styled professionally and ready to hang in minutes.",
     image: "/grabgoparty/party-wall-magic.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",

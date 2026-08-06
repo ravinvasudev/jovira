@@ -14,7 +14,7 @@ export const packageTiers: PackageTier[] = [
       "Ready to surprise — no occasion too small",
     ],
     recommendedFor:
-      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
+      "A spontaneous thank-you, a get-well gesture, or a sweet just-because moment that deserves something more than a card.",
     image: "/grabgobouquet/mini-magic-surprise.png",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -33,7 +33,7 @@ export const packageTiers: PackageTier[] = [
       "Built to be felt, not just seen",
     ],
     recommendedFor:
-      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
+      "Valentine's Day, anniversaries, and heartfelt moments where you want to say it with something beautiful, tangible, and unmistakably warm.",
     image: "/grabgobouquet/bubble-of-love.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",
@@ -52,7 +52,7 @@ export const packageTiers: PackageTier[] = [
       "The centrepiece your milestone deserves",
     ],
     recommendedFor:
-      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
+      "Milestone birthdays, gender reveals, and headline moments that call for a bold, photo-ready centrepiece that commands the room.",
     image: "/grabgobouquet/mega-magic-marquee.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",
