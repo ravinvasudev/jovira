@@ -6,7 +6,7 @@ export const packageTiers: PackageTier[] = [
     name: "Mini Magic Surprise",
     priceFrom: "$29",
     description:
-      "A compact and charming balloon arrangement designed to deliver instant joy. Thoughtfully styled with creative details, this petite surprise is perfect for birthdays, thank-yous, congratulations, and just-because moments.",
+      "A compact and charming balloon arrangement designed to deliver instant joy. Thoughtfully styled with creative details, this petite surprise is perfect for thank-yous, congratulations, and just-because moments.",
     includes: [
       "Big personality in a petite package",
       "Styled for the sweetest of gestures",
@@ -14,7 +14,7 @@ export const packageTiers: PackageTier[] = [
       "Ready to surprise — no occasion too small",
     ],
     recommendedFor:
-      "Birthday dinners, at-home milestones, and small family celebrations.",
+      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
     image: "/grabgobouquet/mini-magic-surprise.png",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -33,7 +33,7 @@ export const packageTiers: PackageTier[] = [
       "Built to be felt, not just seen",
     ],
     recommendedFor:
-      "Baby showers, graduations, and milestone birthdays that need standout visuals.",
+      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
     image: "/grabgobouquet/bubble-of-love.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",
@@ -52,7 +52,7 @@ export const packageTiers: PackageTier[] = [
       "The centrepiece your milestone deserves",
     ],
     recommendedFor:
-      "Large seasonal events and once-in-a-lifetime family celebrations.",
+      "To Welcome or thank someone, extend heartfelt wishes for the moments that stick forever.",
     image: "/grabgobouquet/mega-magic-marquee.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",

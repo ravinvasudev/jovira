@@ -16,7 +16,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Birthday dinners, at-home milestones, and small family celebrations.",
+      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
     image: "/packages/signature-starter.jpeg",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -39,7 +39,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Baby showers, graduations, and milestone birthdays that need standout visuals.",
+      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
     image: "/packages/mini-luxe.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",
@@ -61,7 +61,7 @@ export const balloonStylingTiers: PackageTier[] = [
       "Delivery, professional setup & takedown",
     ],
     recommendedFor:
-      "Large seasonal events and once-in-a-lifetime family celebrations.",
+      "Baby shower, birthday, graduation, and other family milestones that need standout visuals.",
     image: "/packages/glam-luxe.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",

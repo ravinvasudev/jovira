@@ -20,7 +20,7 @@ export const eventStylingTiers: PackageTier[] = [
       "Delivery, professional setup & pickup",
     ],
     recommendedFor:
-      "Large seasonal events and once-in-a-lifetime family celebrations.",
+      "Once-in-a-lifetime events, and medium-to-large family gatherings.",
     image: "/packages/elite.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",
@@ -44,7 +44,7 @@ export const eventStylingTiers: PackageTier[] = [
       "Delivery, professional setup & pickup",
     ],
     recommendedFor:
-      "Large seasonal events and once-in-a-lifetime family celebrations.",
+      "Once-in-a-lifetime events, and medium-to-large family gatherings.",
     image: "/packages/prestige.jpeg",
     imageAlt:
       "Full-scale Jovira transformation with an entrance arch, photo wall, and multiple styled zones",

@@ -14,7 +14,7 @@ export const grabGoPartyReadyTiers: PackageTier[] = [
       "Custom theme props coordinated to your celebration",
     ],
     recommendedFor:
-      "Birthday dinners, at-home milestones, and small family celebrations.",
+      "Last-minute family celebrations.",
     image: "/grabgoparty/crazy-tower.jpeg",
     imageAlt:
       "Intimate Jovira styling with a soft balloon cluster above a dressed celebration table",
@@ -34,7 +34,7 @@ export const grabGoPartyReadyTiers: PackageTier[] = [
       "Custom theme props coordinated to your celebration",
     ],
     recommendedFor:
-      "Baby showers, graduations, and milestone birthdays that need standout visuals.",
+      "Last-minute family celebrations.",
     image: "/grabgoparty/party-wall-magic.jpeg",
     imageAlt:
       "Statement Jovira balloon arch backdrop framed by two styled photo moments",
