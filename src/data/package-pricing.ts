@@ -7,7 +7,7 @@ export const balloonStylingPackages = [
   "Glam Luxe",
 ] as const;
 export const grabAndGoPackages = [
-  "Crazy Towers",
+  "Crazy Tower",
   "Party Wall Magic",
   "Mini Magic Surprise",
   "Bubble Of Love",
@@ -34,7 +34,7 @@ const packagePricingTable: Record<PackageName, PackagePricing> = {
   Signature: { cost: 249, defaultDiscountPct: 0, offerDiscountPct: 10 },
   "Mini Luxe": { cost: 349, defaultDiscountPct: 0, offerDiscountPct: 10 },
   "Glam Luxe": { cost: 449, defaultDiscountPct: 0, offerDiscountPct: 12 },
-  "Crazy Towers": { cost: 119, defaultDiscountPct: 0, offerDiscountPct: 10 },
+  "Crazy Tower": { cost: 119, defaultDiscountPct: 0, offerDiscountPct: 10 },
   "Party Wall Magic": {
     cost: 119,
     defaultDiscountPct: 0,

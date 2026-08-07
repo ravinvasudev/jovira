@@ -9,7 +9,7 @@ export const inspirationItems: InspirationItem[] = [
     palette: "Light Pink, Light Purple, Butter Yellow",
     eventType: "Birthday",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 239,
       discountPct: 10,
     },
@@ -25,7 +25,7 @@ export const inspirationItems: InspirationItem[] = [
       "Roaring into ONE! This dreamy safari setup was created to celebrate a very special little adventurer. From jungle-inspired balloons to adorable animal friends, every detail brought the Wild One theme to life.",
     palette: "Brown, Yellow  Mustard ,Sage Green, Light Green",
     offer: {
-      packageLabel: "SIGNATURE - Kids Birthday Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 279,
       discountPct: 10,
     },
@@ -40,7 +40,7 @@ export const inspirationItems: InspirationItem[] = [
       "Celebrating Lane’s very first trip around the sun with this dreamy balloon installation! Soft shades of baby blue, buttery yellow, and crisp white came together to create a fresh, cheerful backdrop that perfectly captured this sweet milestone.From the custom organic balloon garland to the playful sunshine detail, every element was thoughtfully designed to make this special day unforgettable. Watching our clients’ visions come to life is what we love most!",
     palette: "white, butter yellow, baby blue",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 229,
       discountPct: 10,
     },
@@ -52,7 +52,8 @@ export const inspirationItems: InspirationItem[] = [
     title: "TWO FAST RACING ADVENTURE",
     description:
       "🏁 Samrath is TWO FAST!A fun-filled race car themed 2nd birthday setup featuring vibrant balloon styling, traffic light details, racing elements, and custom décor made to celebrate this special milestone in style. Loved creating this colorful setup full of energy and excitement for the little racer!",
-    palette: "retro sea blue, mustard yellow, avocado green ,bright red, light blue",
+    palette:
+      "retro sea blue, mustard yellow, avocado green ,bright red, light blue",
     eventType: "Birthday",
     offer: {
       packageLabel: "MINI LUXE",
@@ -69,15 +70,14 @@ export const inspirationItems: InspirationItem[] = [
     description:
       " Built for big smiles!A fun-filled Blippi-inspired balloon tower created for a very special birthday celebration! From vibrant balloon styling to personalized details, every element was thoughtfully designed to make this milestone unforgettable",
     palette: " blue, sky blue, orange",
-    eventType: "Bithday",
+    eventType: "Birthday",
     offer: {
-      packageLabel: "Crazy Tower By JOVIRA",
+      packageLabel: "Crazy Tower",
       originalPrice: 119,
       discountPct: 10,
     },
     image: "/inspiration/CT_Blipp.png",
-    imageAlt:
-      "Blippi-Inspired CrazyTower",
+    imageAlt: "Blippi-Inspired CrazyTower",
   },
 
   {
@@ -88,13 +88,12 @@ export const inspirationItems: InspirationItem[] = [
     palette: " Gold, white",
     eventType: "Milestone Celebrations",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 249,
       discountPct: 5,
     },
     image: "/inspiration/hello_forty.PNG",
-    imageAlt:
-      "Cheers to 40 incredible years of unforgettable memories",
+    imageAlt: "Cheers to 40 incredible years of unforgettable memories",
   },
   {
     id: "evergreen-christmas-corner",
@@ -109,8 +108,7 @@ export const inspirationItems: InspirationItem[] = [
       discountPct: 10,
     },
     image: "/inspiration/Unicorn_theme.png",
-    imageAlt:
-      "A Year of Magic & Dreams- Turning ONE in the most magical way.",
+    imageAlt: "A Year of Magic & Dreams- Turning ONE in the most magical way.",
   },
   {
     id: "Communion",
@@ -120,13 +118,12 @@ export const inspirationItems: InspirationItem[] = [
     palette: "Evergreen, champagne, white",
     eventType: "Milestone Celebations",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 219,
       discountPct: 5,
     },
     image: "/inspiration/Communion.png",
-    imageAlt:
-      "First Holy Communion with an elegant custom backdrop",
+    imageAlt: "First Holy Communion with an elegant custom backdrop",
   },
   {
     id: "onderfull_year",
@@ -141,8 +138,7 @@ export const inspirationItems: InspirationItem[] = [
       discountPct: 10,
     },
     image: "/inspiration/bear_onedeful.png",
-    imageAlt:
-      "A celebration as sweet as childhood dreams",
+    imageAlt: "A celebration as sweet as childhood dreams",
   },
   {
     id: "summer_CT",
@@ -152,7 +148,7 @@ export const inspirationItems: InspirationItem[] = [
     palette: "Bright summer color",
     eventType: "Birthday",
     offer: {
-      packageLabel: "Crazy Tower By JOVIRA",
+      packageLabel: "Crazy Tower",
       originalPrice: 119,
       discountPct: 10,
     },
@@ -187,7 +183,7 @@ export const inspirationItems: InspirationItem[] = [
     palette:
       "light colors pink, purple, green, buttery yellow , bubble ballon to give dreamy land existence",
     offer: {
-      packageLabel: "SIGNATURE - Kids Birthday Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 299,
       discountPct: 10,
     },
@@ -202,13 +198,12 @@ export const inspirationItems: InspirationItem[] = [
     palette: "burgaudy, black, gold",
     eventType: "Milestone Celebrations",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 219,
       discountPct: 5,
     },
     image: "/inspiration/50_years.PNG",
-    imageAlt:
-      "A Golden Milestone – 50 Years of Timeless Love",
+    imageAlt: "A Golden Milestone – 50 Years of Timeless Love",
   },
   {
     id: "Boy-or-girl",
@@ -218,7 +213,7 @@ export const inspirationItems: InspirationItem[] = [
       "A dreamy gender reveal setup created with soft pastel balloons, elegant backdrop styling, and sweet baby details to make the moment extra special.",
     palette: "baby pink, baby blue, white",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 229,
       discountPct: 10,
     },
@@ -233,15 +228,13 @@ export const inspirationItems: InspirationItem[] = [
     palette: "mustard yellow, mist blue, burnt orange ",
     eventType: "Baby Shower",
     offer: {
-      packageLabel: "SIGNATURE - Color Theme",
+      packageLabel: "SIGNATURE",
       originalPrice: 219,
       discountPct: 5,
     },
     image: "/inspiration/here_comes_the_sun.png",
-    imageAlt:
-      "Here Comes The Sun. A little sunshine is on the way!",
+    imageAlt: "Here Comes The Sun. A little sunshine is on the way!",
   },
-
 ];
 
 export function getInspirationItemById(id: string) {

@@ -7,6 +7,31 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { InspirationSection } from "@/components/sections/InspirationSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { SectionDivider } from "@/components/ux/SectionDivider";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jovira | Event Styling & Balloon Decoration in Canada",
+  description:
+    "Explore Jovira services, packages, inspiration, and balloon installation options for celebrations in and around Fredericton, New Brunswick, Canada including Oromocto, New Maryland, Hanwell.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Jovira | Event Styling & Balloon Decoration in Canada",
+    description:
+      "Explore event styling, packages, and installation options with inspiration from celebrations in and around Fredericton, New Brunswick, Canada including Oromocto, New Maryland, Hanwell.",
+    url: "https://www.jovira.ca/",
+    type: "website",
+    images: [
+      {
+        url: "/logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Jovira event styling and balloon installation showcase",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

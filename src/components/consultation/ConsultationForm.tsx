@@ -19,7 +19,7 @@ import { parseConsultationIntent } from "@/lib/consultation-intent";
 import { journeyLabels, type JourneyType } from "@/types/consultation";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FaCanadianMapleLeaf } from "react-icons/fa";
 
 type FormData = {
@@ -74,6 +74,11 @@ type StepConfig = {
   fields: FieldConfig[];
 };
 
+type SelectionSummaryItem = {
+  label: string;
+  value: string;
+};
+
 const deliveryOptions = ["No", "Yes"] as const;
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const contactNumberPattern = /^\(\d{3}\) \d{3}-\d{4}$/;
@@ -95,19 +100,19 @@ const pathChoices: Array<{
   },
   {
     id: "eventStyling",
-    title: "Book Event Styling Package",
+    title: "Book Event Styling Service",
     description:
       "Best if you’re ready to book full event styling at your venue.",
   },
   {
     id: "balloonStyling",
-    title: "Book Balloon Installation Package",
+    title: "Book Balloon Installation Service",
     description:
       "Best if you’re ready to book full balloon installation at your venue.",
   },
   {
     id: "grabAndGo",
-    title: "Book Grab 'n Go Package",
+    title: "Book Grab 'n Go Service",
     description:
       "Best for quick décor orders with pick-up or delivery preferences.",
   },
@@ -376,7 +381,7 @@ function getStepsForJourney(
               : "Pickup or delivery",
         description:
           formData.delivery === "Yes"
-            ? "Set your preferred delivery date and time for a smooth handoff."
+            ? "Set your preferred delivery date and time for a smooth handoff. (Delivery charges apply.)"
             : formData.delivery === "No"
               ? "Choose your pickup date and time so your order is ready when you arrive."
               : "Choose pickup or delivery first, then we will collect timing details.",
@@ -550,10 +555,28 @@ export function ConsultationForm() {
   const intentSignatureRef = useRef("");
   const [formData, setFormData] = useState<FormData>(createInitialFormData());
 
+  const resetConsultationForm = useCallback(() => {
+    setFormType("");
+    setStepIndex(0);
+    setSubmitted(false);
+    setIsSubmitting(false);
+    setSubmitError(null);
+    setIsIntentFlow(false);
+    setPackageLocked(false);
+    intentSignatureRef.current = "";
+    setFormData(createInitialFormData());
+  }, []);
+
   useEffect(() => {
     const signature = searchParams.toString();
 
-    if (!parsedIntent.flow || signature === intentSignatureRef.current) {
+    if (!parsedIntent.flow) {
+      return;
+    }
+
+    // Allow restarting from CTA/intent even when query signature matches
+    // a previously completed submission.
+    if (signature === intentSignatureRef.current && !submitted) {
       return;
     }
 
@@ -580,7 +603,53 @@ export function ConsultationForm() {
       setFormData(initialData);
       intentSignatureRef.current = signature;
     });
-  }, [inspirationOffer, parsedIntent, searchParams]);
+  }, [inspirationOffer, parsedIntent, searchParams, submitted]);
+
+  useEffect(() => {
+    if (!submitted) {
+      return;
+    }
+
+    const isConsultationHref = (href: string) => {
+      const normalized = href.trim().toLowerCase();
+      return (
+        normalized === "#consultation" || normalized.endsWith("#consultation")
+      );
+    };
+
+    const onDocumentClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const anchor = target.closest("a[href]");
+      if (!(anchor instanceof HTMLAnchorElement)) {
+        return;
+      }
+
+      const href = anchor.getAttribute("href");
+      if (!href || !isConsultationHref(href)) {
+        return;
+      }
+
+      resetConsultationForm();
+    };
+
+    const onHashChange = () => {
+      if (window.location.hash.toLowerCase() === "#consultation") {
+        resetConsultationForm();
+      }
+    };
+
+    document.addEventListener("click", onDocumentClick);
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      document.removeEventListener("click", onDocumentClick);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, [resetConsultationForm, submitted]);
 
   const steps = useMemo(() => {
     if (!formType) {
@@ -599,6 +668,27 @@ export function ConsultationForm() {
   const progress = formType
     ? ((stepIndex + 1) / Math.max(totalSteps, 1)) * 100
     : 0;
+  const selectedPath = formType
+    ? pathChoices.find((choice) => choice.id === formType)
+    : undefined;
+  const selectionSummary: SelectionSummaryItem[] = formType
+    ? [
+        {
+          label: "Service",
+          value: selectedPath?.title ?? journeyLabels[formType],
+        },
+        {
+          label: "Event Type",
+          value: formData.eventType.trim() || "Not selected yet",
+        },
+        {
+          label: "Package",
+          value: formData.packageChoice.trim() || "Not selected yet",
+        },
+      ]
+    : [];
+  const selectionSummaryGridCols =
+    selectionSummary.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2";
 
   const pricing = useMemo(() => {
     if (!formType) {
@@ -1061,6 +1151,37 @@ export function ConsultationForm() {
     >
       {formType ? (
         <>
+          {formType !== "consultation" ? (
+            <div className="rounded-sm border border-border bg-surface-soft px-4 py-3">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-accent">
+                Your selections
+              </p>
+              <div className={`mt-2 grid gap-2 ${selectionSummaryGridCols}`}>
+                {selectionSummary.map((item) => {
+                  const hasSelection = item.value !== "Not selected yet";
+
+                  return (
+                    <div
+                      key={item.label}
+                      className={`rounded-sm border px-3 py-2 ${
+                        hasSelection
+                          ? "border-brand/45 bg-brand/10"
+                          : "border-border bg-surface"
+                      }`}
+                    >
+                      <p className="text-[10px] font-extrabold uppercase tracking-widest text-foreground/70">
+                        {item.label}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold text-foreground">
+                        {item.value.replace(/Book | Service/g, "")}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
+
           <div
             aria-hidden
             className="h-2 w-full overflow-hidden rounded-full bg-brand"
