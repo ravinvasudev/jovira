@@ -401,16 +401,14 @@ function hasInvalidPackage(payload: IntakePayload, formType: JourneyType) {
 
 export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONSULTATION_TO_EMAIL;
   const fromEmail =
-    process.env.CONSULTATION_FROM_EMAIL ?? "Jovira <onboarding@resend.dev>";
+    process.env.CONSULTATION_FROM_EMAIL ?? "Jovira <no-reply@jovira.ca>";
   const sheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
 
-  if (!resendApiKey || !toEmail) {
+  if (!resendApiKey) {
     return NextResponse.json(
       {
-        error:
-          "Server is missing RESEND_API_KEY or CONSULTATION_TO_EMAIL configuration.",
+        error: "Server is missing RESEND_API_KEY configuration.",
       },
       { status: 500 },
     );
@@ -510,13 +508,54 @@ export async function POST(request: Request) {
 
   const resend = new Resend(resendApiKey);
 
+  let emailTemplate = "";
+  let variables: Record<string, string> = {};
+
+  if (payload.formType === "consultation") {
+    emailTemplate = "booking-ack-consult";
+    variables = {
+      emailSubject: `JOVIRA: ${journeyLabels[payload.formType]} request received`,
+      fullname: payload.fullName,
+      phone: payload.contactNumber,
+    };
+  } else if (
+    payload.formType === "eventStyling" ||
+    payload.formType === "balloonStyling"
+  ) {
+    emailTemplate = "booking-ack-styling";
+    variables = {
+      emailSubject: `JOVIRA: ${journeyLabels[payload.formType]} request received`,
+      fullname: payload.fullName,
+      service: journeyLabels[payload.formType],
+      date: payload.eventDate,
+      time: payload.eventStartTime,
+      theme: payload.eventTheme,
+      package: payload.packageChoice,
+      phone: payload.contactNumber,
+    };
+  } else if (payload.formType === "grabAndGo") {
+    emailTemplate = "booking-ack-grab-and-go";
+    variables = {
+      emailSubject: `JOVIRA: ${journeyLabels[payload.formType]} request received`,
+      fullname: payload.fullName,
+      service: journeyLabels[payload.formType],
+      date: payload.deliveryDate ? payload.deliveryDate : payload.pickupDate,
+      time: payload.deliveryTime ? payload.deliveryTime : payload.pickupTime,
+      theme: payload.eventTheme,
+      package: payload.packageChoice,
+      phone: payload.contactNumber,
+    };
+  }
+
   try {
     await resend.emails.send({
       from: fromEmail,
-      to: [toEmail],
+      to: [payload.email],
       replyTo: payload.email,
-      subject: `New ${journeyLabels[payload.formType]} request - ${payload.fullName}`,
-      html: buildHtml(payload, payload.formType),
+      template: {
+        id: emailTemplate,
+        variables: variables,
+      },
     });
 
     if (sheetsWebhookUrl) {

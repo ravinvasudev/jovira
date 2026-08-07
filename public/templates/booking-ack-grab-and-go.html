@@ -1,0 +1,950 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+  <head>
+    <meta content="width=device-width" name="viewport" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta
+      content="telephone=no,address=no,email=no,date=no,url=no"
+      name="format-detection"
+    />
+    <style>
+      @media (prefers-color-scheme: dark) {
+        li::marker {
+          color: #c4c4c4;
+        }
+      }
+    </style>
+    <style>
+      /* Jovira brand palette */
+      /* --background: #f9f6eb  --surface: #fffdf7  --brand: #4b80b4  --brand-deep: #2f5f91 */
+      /* --ink: #10233f  --blush: #f2b7bb  --aqua: #c7ebf2  --border: #dfe6ec */
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f9f6eb;
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        color: #10233f;
+        -webkit-font-smoothing: antialiased;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      a {
+        color: #2f5f91;
+        text-decoration: underline;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .email-wrapper {
+          width: 100% !important;
+        }
+        .email-body {
+          padding: 28px 20px !important;
+        }
+        .details-table td {
+          display: block;
+          width: 100% !important;
+          padding: 4px 0 !important;
+        }
+        .details-table .label-cell {
+          font-weight: 600;
+          padding-bottom: 0 !important;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body,
+        .email-bg {
+          background-color: #12213a !important;
+        }
+        .email-card {
+          background-color: #1a2e4a !important;
+          border-color: #2a3f5f !important;
+        }
+        .email-header {
+          background-color: #0d1e35 !important;
+        }
+        .details-row td {
+          border-color: #2a3f5f !important;
+        }
+        p,
+        td,
+        h1,
+        h2,
+        h3 {
+          color: #e8eff7 !important;
+        }
+        .muted-text {
+          color: #8fa8c8 !important;
+        }
+        .footer-band {
+          background-color: #0d1e35 !important;
+        }
+        .footer-text {
+          color: #8fa8c8 !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    dir="ltr"
+    lang="en"
+    style="
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+    "
+  >
+    <!--$--><!--html--><!--head--><!--body-->
+    <table
+      border="0"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            dir="ltr"
+            lang="en"
+            style="
+              margin: 0px;
+              padding-top: 0px;
+              padding-right: 0px;
+              padding-bottom: 0px;
+              padding-left: 0px;
+            "
+          >
+            <table
+              align="center"
+              width="100%"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+              style="
+                max-width: 600px;
+                align: center;
+                width: 100%;
+                background-color: #fffdf7;
+                border-radius: 0px;
+              "
+            >
+              <tbody>
+                <tr style="width: 100%">
+                  <td
+                    style="
+                      padding-top: 0px;
+                      padding-right: 0px;
+                      padding-bottom: 0px;
+                      padding-left: 0px;
+                    "
+                  >
+                    <table
+                      width="100%"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      role="presentation"
+                      style="
+                        margin-top: 0;
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        margin-left: 0;
+                        padding-top: 32px;
+                        padding-right: 0;
+                        padding-bottom: 32px;
+                        padding-left: 0;
+                        background-color: #f9f6eb;
+                      "
+                    >
+                      <tbody>
+                        <tr style="margin: 0; padding: 0">
+                          <td
+                            align="center"
+                            data-id="__react-email-column"
+                            style="margin: 0; padding: 0"
+                          >
+                            <table
+                              align="center"
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              role="presentation"
+                              style="
+                                max-width: 600px;
+                                align: center;
+                                width: 100%;
+                                background-color: #fffdf7;
+                                border-radius: 8px;
+                                border: 1px solid #dfe6ec;
+                                overflow: hidden;
+                              "
+                            >
+                              <tbody>
+                                <tr style="width: 100%">
+                                  <td
+                                    style="
+                                      padding-top: 0px;
+                                      padding-right: 0px;
+                                      padding-bottom: 0px;
+                                      padding-left: 0px;
+                                    "
+                                  >
+                                    <table
+                                      width="100%"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      class="email-header"
+                                      style="
+                                        margin-top: 0;
+                                        margin-right: 0;
+                                        margin-bottom: 0;
+                                        margin-left: 0;
+                                        padding-top: 0;
+                                        padding-right: 0;
+                                        padding-bottom: 0;
+                                        padding-left: 0;
+                                        background-color: #10233f;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr style="margin: 0; padding: 0">
+                                          <td
+                                            align="center"
+                                            data-id="__react-email-column"
+                                            style="
+                                              margin: 0;
+                                              padding: 0;
+                                              background-color: #10233f;
+                                              background-image: url(&quot;https://www.jovira.ca/hero-celebration.png&quot;);
+                                              background-size: cover;
+                                              background-position: center;
+                                            "
+                                          >
+                                            <table
+                                              width="100%"
+                                              border="0"
+                                              cellpadding="0"
+                                              cellspacing="0"
+                                              role="presentation"
+                                              style="
+                                                margin-top: 0;
+                                                margin-right: 0;
+                                                margin-bottom: 0;
+                                                margin-left: 0;
+                                                padding-top: 0;
+                                                padding-right: 0;
+                                                padding-bottom: 0;
+                                                padding-left: 0;
+                                              "
+                                            >
+                                              <tbody>
+                                                <tr
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    align="center"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 36px 40px 28px;
+                                                      background-color: #10233f66;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                        font-family:
+                                                          &quot;Segoe UI&quot;,
+                                                          Arial, sans-serif;
+                                                        font-size: 22px;
+                                                        font-weight: 700;
+                                                        letter-spacing: 0.22em;
+                                                        text-transform: uppercase;
+                                                        color: #f9f6eb;
+                                                      "
+                                                    >
+                                                      JOVIRA
+                                                    </p>
+                                                    <p
+                                                      style="
+                                                        margin: 4px 0 0;
+                                                        padding: 0;
+                                                        font-family:
+                                                          &quot;Segoe UI&quot;,
+                                                          Arial, sans-serif;
+                                                        font-size: 11px;
+                                                        letter-spacing: 0.12em;
+                                                        text-transform: uppercase;
+                                                        color: #95c8fa;
+                                                      "
+                                                    >
+                                                      Event Styling &amp;
+                                                      Balloon Decoration
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <tr style="margin: 0; padding: 0">
+                                          <td
+                                            data-id="__react-email-column"
+                                            style="
+                                              margin: 0;
+                                              padding: 0;
+                                              height: 4px;
+                                              background-color: #f2b7bb;
+                                              font-size: 0;
+                                              line-height: 0;
+                                            "
+                                          >
+                                            <p style="margin: 0; padding: 0">
+                                               
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      width="100%"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      style="
+                                        margin-top: 0;
+                                        margin-right: 0;
+                                        margin-bottom: 0;
+                                        margin-left: 0;
+                                        padding-top: 0;
+                                        padding-right: 0;
+                                        padding-bottom: 0;
+                                        padding-left: 0;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr style="margin: 0; padding: 0">
+                                          <td
+                                            class="email-body"
+                                            data-id="__react-email-column"
+                                            style="
+                                              margin: 0;
+                                              padding: 40px 48px 32px;
+                                            "
+                                          >
+                                            <p
+                                              style="
+                                                margin: 0 0 4px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 15px;
+                                                color: #1b3a63;
+                                              "
+                                            >
+                                              <strong>Hi </strong
+                                              ><strong>{{{fullname}}}</strong
+                                              ><strong>,</strong>
+                                            </p>
+                                            <h2
+                                              style="
+                                                margin: 16px 0 12px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 22px;
+                                                font-weight: 700;
+                                                color: #10233f;
+                                                line-height: 1.3;
+                                              "
+                                            >
+                                              Thank you for starting your JOVIRA
+                                              journey.
+                                            </h2>
+                                            <p
+                                              style="
+                                                margin: 0 0 8px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 15px;
+                                                line-height: 1.65;
+                                                color: #2c2c2c;
+                                              "
+                                            >
+                                              We&#x27;ve received your
+                                              <!-- -->{{{service}}}<!-- -->
+                                              request and will be in touch with
+                                              you after reviewing the details
+                                              for the next steps.
+                                            </p>
+                                            <p
+                                              style="
+                                                margin: 0 0 28px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 15px;
+                                                line-height: 1.65;
+                                                color: #2c2c2c;
+                                              "
+                                            >
+                                              Please review the summary below to
+                                              confirm your details are correct.
+                                            </p>
+                                            <table
+                                              width="100%"
+                                              border="0"
+                                              cellpadding="0"
+                                              cellspacing="0"
+                                              role="presentation"
+                                              class="details-table"
+                                              style="
+                                                margin-top: 0;
+                                                margin-right: 0;
+                                                margin-bottom: 32px;
+                                                margin-left: 0;
+                                                padding-top: 0;
+                                                padding-right: 0;
+                                                padding-bottom: 0;
+                                                padding-left: 0;
+                                                border-style: solid;
+                                                border-width: 1px;
+                                                border-color: #dfe6ec;
+                                                border-radius: 6px;
+                                                overflow: hidden;
+                                              "
+                                            >
+                                              <tbody>
+                                                <tr
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 10px 16px;
+                                                      background-color: #eaf3fc;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                        font-family:
+                                                          &quot;Segoe UI&quot;,
+                                                          Arial, sans-serif;
+                                                        font-size: 11px;
+                                                        font-weight: 700;
+                                                        letter-spacing: 0.1em;
+                                                        text-transform: uppercase;
+                                                        color: #2f5f91;
+                                                      "
+                                                    >
+                                                      Booking Summary
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr
+                                                  class="details-row"
+                                                  style="
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    border-bottom: 1px solid
+                                                      #dfe6ec;
+                                                  "
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Service
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{service}}}<!-- -->
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr
+                                                  class="details-row"
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Theme
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{theme}}}
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr
+                                                  class="details-row"
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Package
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{package}}}
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr
+                                                  class="details-row"
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Date
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{date}}}<!-- -->
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr
+                                                  class="details-row"
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Time
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                      border-bottom: 1px solid
+                                                        #dfe6ec;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{time}}}<!-- -->
+                                                    </p>
+                                                  </td>
+                                                </tr>
+
+                                                <tr
+                                                  class="details-row"
+                                                  style="margin: 0; padding: 0"
+                                                >
+                                                  <td
+                                                    class="label-cell"
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      width: 40%;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      font-weight: 600;
+                                                      color: #1b3a63;
+                                                      white-space: nowrap;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      Contact Number
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id="__react-email-column"
+                                                    style="
+                                                      margin: 0;
+                                                      padding: 12px 16px;
+                                                      font-family:
+                                                        &quot;Segoe UI&quot;,
+                                                        Arial, sans-serif;
+                                                      font-size: 13px;
+                                                      color: #2c2c2c;
+                                                    "
+                                                  >
+                                                    <p
+                                                      style="
+                                                        margin: 0;
+                                                        padding: 0;
+                                                      "
+                                                    >
+                                                      {{{phone}}}
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <p
+                                              style="
+                                                margin: 0;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 15px;
+                                                line-height: 1.65;
+                                                color: #2c2c2c;
+                                              "
+                                            >
+                                              We can&#x27;t wait to help you
+                                              create something truly memorable.
+                                            </p>
+                                            <p
+                                              style="
+                                                margin: 16px 0 0;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 15px;
+                                                color: #2c2c2c;
+                                              "
+                                            >
+                                              Warmly,<br /><strong
+                                                >The JOVIRA Team</strong
+                                              >
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      width="100%"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      class="footer-band"
+                                      style="
+                                        margin-top: 0;
+                                        margin-right: 0;
+                                        margin-bottom: 0;
+                                        margin-left: 0;
+                                        padding-top: 0;
+                                        padding-right: 0;
+                                        padding-bottom: 0;
+                                        padding-left: 0;
+                                        background-color: #10233f;
+                                        border-top: 4px solid #c7ebf2;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr style="margin: 0; padding: 0">
+                                          <td
+                                            align="center"
+                                            data-id="__react-email-column"
+                                            style="
+                                              margin: 0;
+                                              padding: 24px 40px;
+                                            "
+                                          >
+                                            <p
+                                              class="footer-text"
+                                              style="
+                                                margin: 0 0 6px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                font-weight: 700;
+                                                letter-spacing: 0.2em;
+                                                text-transform: uppercase;
+                                                color: #f9f6eb;
+                                              "
+                                            >
+                                              JOVIRA
+                                            </p>
+                                            <p
+                                              class="footer-text"
+                                              style="
+                                                margin: 0 0 12px;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 12px;
+                                                color: #95c8fa;
+                                              "
+                                            >
+                                              Event Styling &amp; Balloon
+                                              Decoration Service
+                                            </p>
+                                            <p
+                                              class="footer-text muted-text"
+                                              style="
+                                                margin: 0;
+                                                padding: 0;
+                                                font-family:
+                                                  &quot;Segoe UI&quot;, Arial,
+                                                  sans-serif;
+                                                font-size: 11px;
+                                                color: #8fa8c8;
+                                                line-height: 1.6;
+                                              "
+                                            >
+                                              You&#x27;re receiving this email
+                                              because you submitted a
+                                              consultation request at
+                                              <a
+                                                href="https://www.jovira.ca"
+                                                rel="noopener noreferrer nofollow"
+                                                style="
+                                                  color: #95c8fa;
+                                                  text-decoration-line: none;
+                                                  text-decoration: underline;
+                                                "
+                                                target="_blank"
+                                                ><u>jovira.ca</u></a
+                                              >.<br />If this wasn&#x27;t you,
+                                              please disregard this message.
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--/$-->
+  </body>
+</html>

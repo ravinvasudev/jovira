@@ -14,8 +14,8 @@ export function isJourneyType(value: string): value is JourneyType {
 
 export const journeyLabels: Record<JourneyType, string> = {
   consultation: "Free Consultation",
-  eventStyling: "Event Styling Package",
-  balloonStyling: "Balloon Installation Package",
-  grabAndGo: "Grab 'n Go Package",
+  eventStyling: "Event Styling Service",
+  balloonStyling: "Balloon Installation Service",
+  grabAndGo: "Grab 'n Go Service",
   offer: "Special Offer",
 };
