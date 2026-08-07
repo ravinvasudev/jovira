@@ -131,6 +131,12 @@ export default function RootLayout({
       lang="en-CA"
       className={`${displayFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="q8_OxU0kDcPDRHFaVlBikj0Wz5cbD9is2A-YMfSHxpQ"
+        />
+      </head>
       <body className="site-shell min-h-full flex flex-col">
         <SectionChoreography />
         <SiteHeader />
