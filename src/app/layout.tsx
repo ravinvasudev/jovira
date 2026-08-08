@@ -22,30 +22,19 @@ const bodyFont = Jost({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jovira.ca"),
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
-    apple: [{ url: "/logo.jpeg", sizes: "180x180", type: "image/jpeg" }],
-  },
-  title:
-    "Jovira | Event Styling & Balloon Decoration in and around Fredericton, New Brunswick, Canada",
+  title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
   description:
-    "Jovira transforms customer-provided venues with elegant, stress-free event styling, balloon décor, and custom backdrop designs in and around Fredericton, New Brunswick, including Oromocto, New Maryland, Hanwell.",
+    "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
   keywords: [
     "Event Styling",
-    "Balloon Decoration",
+    "Balloon Installation",
     "Grab and Go Services",
     "Event Planning",
-    "Fredericton",
-    "Oromocto",
-    "New Maryland",
-    "Hanwell",
-    "New Brunswick",
-    "Canada",
+    "Party Supplies",
+    "Balloons",
+    "Decorations",
+    "Event Services",
   ],
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
@@ -58,43 +47,28 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title:
-      "Jovira | Event Styling & Balloon Decoration in and around Fredericton, New Brunswick, Canada",
+    title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
     description:
-      "Consultation-led event styling for birthdays, graduations, and seasonal celebrations in and around Fredericton, New Brunswick, including Oromocto, New Maryland, Hanwell.",
+      "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
     url: "https://www.jovira.ca",
-    siteName: "Jovira",
+    siteName: "JOVIRA",
     locale: "en_CA",
     type: "website",
-    images: [
-      {
-        url: "/logo.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Jovira event styling and balloon decoration services",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Jovira | Event Styling & Balloon Decoration in and around Fredericton, New Brunswick, Canada",
-    description:
-      "Consultation-led event styling for birthdays, graduations, and seasonal celebrations in and around Fredericton, New Brunswick, including Oromocto, New Maryland, Hanwell.",
-    images: ["/logo.jpeg"],
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Jovira",
+  name: "JOVIRA",
   url: "https://www.jovira.ca",
   logo: "https://www.jovira.ca/jovira-mark.svg",
   image: "https://www.jovira.ca/jovira-mark.svg",
   description:
-    "Consultation-led event styling and decoration service that transforms customer-provided venues in and around Fredericton, New Brunswick, including Oromocto, New Maryland, Hanwell.",
-  // email: "hello@jovira.ca",
+    "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
   priceRange: "$$",
   areaServed: [
     {
@@ -118,7 +92,7 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     addressCountry: "CA",
   },
-  serviceType: "Event Styling & Balloon Decoration",
+  serviceType: "Event Styling & Balloon Installation",
 };
 
 export default function RootLayout({
