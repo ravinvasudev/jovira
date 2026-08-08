@@ -11,10 +11,10 @@ type PackageCardProps = {
   index: number;
 };
 
-const BalloonStylingModal = dynamic<PackageTierDialogProps>(
+const BalloonInstallationModal = dynamic<PackageTierDialogProps>(
   () =>
-    import("@/components/balloonstyling/BalloonStylingModal").then(
-      (module) => module.BalloonStylingModal,
+    import("@/components/ballooninstallation/BalloonInstallationModal").then(
+      (module) => module.BalloonInstallationModal,
     ),
   {
     loading: () => null,
@@ -26,7 +26,7 @@ export function PackageCard({ tier, index }: PackageCardProps) {
     <PackageTierCard
       tier={tier}
       index={index}
-      ModalComponent={BalloonStylingModal}
+      ModalComponent={BalloonInstallationModal}
     />
   );
 }

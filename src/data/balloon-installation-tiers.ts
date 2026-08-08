@@ -1,6 +1,6 @@
 import type { PackageTier } from "@/types/package-tier";
 
-export const balloonStylingTiers: PackageTier[] = [
+export const balloonInstallationTiers: PackageTier[] = [
   {
     id: "signature-starter",
     name: "Signature",

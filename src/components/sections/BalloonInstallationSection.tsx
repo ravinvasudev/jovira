@@ -1,12 +1,12 @@
-import { PackageCard } from "@/components/balloonstyling/BalloonStylingCard";
-import { balloonStylingTiers } from "@/data/balloon-styling-tiers";
+import { PackageCard } from "@/components/ballooninstallation/BalloonInstallationCard";
+import { balloonInstallationTiers } from "@/data/balloon-installation-tiers";
 
-export function BalloonStylingSection() {
+export function BalloonInstallationSection() {
   return (
     <section
-      id="balloon-styling"
+      id="balloon-installation"
       className="fluid-section bg-muted"
-      aria-labelledby="balloon-styling-title"
+      aria-labelledby="balloon-installation-title"
       data-choreo
     >
       <div className="max-w-4xl" data-choreo-item data-choreo-delay="90">
@@ -14,7 +14,7 @@ export function BalloonStylingSection() {
           balloon installation
         </p>
         <h2
-          id="balloon-styling-title"
+          id="balloon-installation-title"
           className="jov-heading mt-4 text-foreground"
         >
           it&apos;s the details they remember.
@@ -29,7 +29,7 @@ export function BalloonStylingSection() {
         data-choreo-item
         data-choreo-delay="280"
       >
-        {balloonStylingTiers.map((tier, index) => (
+        {balloonInstallationTiers.map((tier, index) => (
           <PackageCard key={tier.id} tier={tier} index={index} />
         ))}
       </div>

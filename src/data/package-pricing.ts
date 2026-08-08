@@ -1,7 +1,7 @@
 import type { JourneyType } from "@/types/consultation";
 
 export const eventStylingPackages = ["Elite", "Prestige"] as const;
-export const balloonStylingPackages = [
+export const balloonInstallationPackages = [
   "Signature",
   "Mini Luxe",
   "Glam Luxe",
@@ -16,7 +16,7 @@ export const grabAndGoPackages = [
 
 export const offerPackages = [
   ...eventStylingPackages,
-  ...balloonStylingPackages,
+  ...balloonInstallationPackages,
   ...grabAndGoPackages,
 ] as const;
 
@@ -56,7 +56,7 @@ const packagePricingTable: Record<PackageName, PackagePricing> = {
 const journeyPackageMap: Record<JourneyType, readonly PackageName[]> = {
   consultation: [],
   eventStyling: eventStylingPackages,
-  balloonStyling: balloonStylingPackages,
+  balloonInstallation: balloonInstallationPackages,
   grabAndGo: grabAndGoPackages,
   offer: offerPackages,
 };

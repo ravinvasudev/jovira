@@ -1,25 +1,25 @@
 "use client";
 
 import {
-  PackageTierModal,
-  type PackageTierDialogProps,
+    PackageTierModal,
+    type PackageTierDialogProps,
 } from "@/components/packages/PackageTierModal";
 import { stylingGoodToKnowNotes } from "@/data/styling-installation-notes";
 
-type BalloonStylingModalProps = PackageTierDialogProps;
+type BalloonInstallationModalProps = PackageTierDialogProps;
 
-export function BalloonStylingModal({
+export function BalloonInstallationModal({
   tier,
   open,
   onClose,
-}: BalloonStylingModalProps) {
+}: BalloonInstallationModalProps) {
   return (
     <PackageTierModal
       tier={tier}
       open={open}
       onClose={onClose}
-      flow="balloonStyling"
-      source={`balloon-styling-${tier.id}-reserve`}
+      flow="balloonInstallation"
+      source={`balloon-installation-${tier.id}-reserve`}
       notes={stylingGoodToKnowNotes}
       ctaLabel={`Reserve ${tier.name} Package`}
       ctaSpacingClassName="mt-8"

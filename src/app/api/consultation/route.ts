@@ -59,7 +59,7 @@ const requiredFieldsByType: Record<JourneyType, Array<keyof IntakePayload>> = {
     "eventTheme",
     "packageChoice",
   ],
-  balloonStyling: [
+  balloonInstallation: [
     "fullName",
     "email",
     "contactNumber",
@@ -180,7 +180,7 @@ function getFieldsForEmail(payload: IntakePayload, formType: JourneyType) {
     ] as Array<[string, string]>;
   }
 
-  if (formType === "eventStyling" || formType === "balloonStyling") {
+  if (formType === "eventStyling" || formType === "balloonInstallation") {
     const pricing = getPricingForPayload(payload);
 
     return [
@@ -473,7 +473,7 @@ export async function POST(request: Request) {
 
   if (
     (payload.formType === "eventStyling" ||
-      payload.formType === "balloonStyling" ||
+      payload.formType === "balloonInstallation" ||
       payload.formType === "offer") &&
     hasInvalidTimeRange(payload)
   ) {
@@ -520,7 +520,7 @@ export async function POST(request: Request) {
     };
   } else if (
     payload.formType === "eventStyling" ||
-    payload.formType === "balloonStyling"
+    payload.formType === "balloonInstallation"
   ) {
     emailTemplate = "booking-ack-styling";
     variables = {

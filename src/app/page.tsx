@@ -1,4 +1,4 @@
-import { BalloonStylingSection } from "@/components/sections/BalloonStylingSection";
+import { BalloonInstallationSection } from "@/components/sections/BalloonInstallationSection";
 import { ConsultationSection } from "@/components/sections/ConsultationSection";
 import { EventStylingSection } from "@/components/sections/EventStylingSection";
 import { GrabGoBouquetsSection } from "@/components/sections/GrabGoBouquetSection";
@@ -36,7 +36,7 @@ export default function Home() {
       <EventStylingSection />
 
       <SectionDivider variant="drape" from="bg-background" to="bg-muted" />
-      <BalloonStylingSection />
+      <BalloonInstallationSection />
 
       <SectionDivider variant="drape" from="bg-muted" to="bg-background" flip />
       <GrabGoPartyReadySection />

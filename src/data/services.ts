@@ -35,7 +35,7 @@ export const services: Service[] = [
     image: "/services/balloon-styling.jpeg",
     imageAlt:
       "Jovira balloon arch in blush, sky blue, and sunshine tones framing a draped celebration backdrop",
-    navLink: "#balloon-styling",
+    navLink: "#balloon-installation",
   },
   {
     id: "seasonal-event-decor",

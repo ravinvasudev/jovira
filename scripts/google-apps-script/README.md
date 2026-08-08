@@ -12,7 +12,7 @@ This script receives Jovira form submissions from the Next.js API route and appe
 - Supports all submission types:
   - `consultation`
   - `eventStyling`
-  - `balloonStyling`
+  - `balloonInstallation`
   - `grabAndGo`
   - `offer`
 - Enforces grab-and-go delivery logic:

@@ -51,7 +51,7 @@ export const inspirationItems: InspirationItem[] = [
     id: "two_fast",
     title: "TWO FAST RACING ADVENTURE",
     description:
-      "🏁 Samrath is TWO FAST!A fun-filled race car themed 2nd birthday setup featuring vibrant balloon styling, traffic light details, racing elements, and custom décor made to celebrate this special milestone in style. Loved creating this colorful setup full of energy and excitement for the little racer!",
+      "🏁 Samrath is TWO FAST!A fun-filled race car themed 2nd birthday setup featuring vibrant balloon installation, traffic light details, racing elements, and custom décor made to celebrate this special milestone in style. Loved creating this colorful setup full of energy and excitement for the little racer!",
     palette:
       "retro sea blue, mustard yellow, avocado green ,bright red, light blue",
     eventType: "Birthday",
@@ -68,7 +68,7 @@ export const inspirationItems: InspirationItem[] = [
     id: "blippi_CT",
     title: "BLIPPI-INSPIRED CrazyTower",
     description:
-      " Built for big smiles!A fun-filled Blippi-inspired balloon tower created for a very special birthday celebration! From vibrant balloon styling to personalized details, every element was thoughtfully designed to make this milestone unforgettable",
+      " Built for big smiles!A fun-filled Blippi-inspired balloon tower created for a very special birthday celebration! From vibrant balloon installation to personalized details, every element was thoughtfully designed to make this milestone unforgettable",
     palette: " blue, sky blue, orange",
     eventType: "Birthday",
     offer: {
@@ -129,7 +129,7 @@ export const inspirationItems: InspirationItem[] = [
     id: "onderfull_year",
     title: "A BEAT-Y ONE-DERFUL YEAR",
     description:
-      "A celebration as sweet as childhood dreams.Soft blues, warm caramel tones, and whimsical details came together to create this ONE-derful Year celebration for little Atharv. From the charming hot air balloon to the organic balloon styling, every element was thoughtfully designed to make this milestone truly unforgettable.",
+      "A celebration as sweet as childhood dreams.Soft blues, warm caramel tones, and whimsical details came together to create this ONE-derful Year celebration for little Atharv. From the charming hot air balloon to the organic balloon installation, every element was thoughtfully designed to make this milestone truly unforgettable.",
     palette: "dusty blue, sand white, Brown",
     eventType: "Birthday",
     offer: {
@@ -224,7 +224,7 @@ export const inspirationItems: InspirationItem[] = [
     id: "here_comes_the_sun",
     title: "HERE COMES THE SUN",
     description:
-      "A little sunshine is on the way!This dreamy baby shower was designed with soft hues, elegant balloon styling, and charming details to celebrate the sweetest little boy on the way. Every element came together to create a warm, joyful atmosphere filled with love, laughter, and unforgettable memories.",
+      "A little sunshine is on the way!This dreamy baby shower was designed with soft hues, elegant balloon installation, and charming details to celebrate the sweetest little boy on the way. Every element came together to create a warm, joyful atmosphere filled with love, laughter, and unforgettable memories.",
     palette: "mustard yellow, mist blue, burnt orange ",
     eventType: "Baby Shower",
     offer: {

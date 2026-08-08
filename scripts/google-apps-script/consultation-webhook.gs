@@ -1,10 +1,10 @@
-const SHEET_NAME = "Consultation Submissions";
+const SHEET_NAME = "Submissions";
 
 const SUBMISSION_TYPE_LABELS = {
   consultation: "Free Consultation",
-  eventStyling: "Event Styling Package",
-  balloonInstallation: "Balloon Installation Package",
-  grabAndGo: "Grab 'n Go Package",
+  eventStyling: "Event Styling Service",
+  balloonInstallation: "Balloon Installation Service",
+  grabAndGo: "Grab 'n Go Service",
   offer: "Special Offer",
 };
 
@@ -13,8 +13,11 @@ const LABEL_TO_SUBMISSION_TYPE = {
   consultation: "consultation",
   "event styling package": "eventStyling",
   "event styling": "eventStyling",
-  "balloon installation package": "balloonStyling",
+  "balloon installation package": "balloonInstallation",
   "balloon installation": "balloonInstallation",
+  "balloon installation service": "balloonInstallation",
+  "balloon styling": "balloonInstallation",
+  "balloon styling service": "balloonInstallation",
   "grab 'n go package": "grabAndGo",
   "grab and go package": "grabAndGo",
   "grab and go": "grabAndGo",
@@ -68,7 +71,7 @@ const REQUIRED_FIELDS_BY_TYPE = {
     "eventTheme",
     "package",
   ],
-  balloonStyling: [
+  balloonInstallation: [
     "name",
     "email",
     "phoneNumber",
@@ -131,6 +134,15 @@ function doPost(e) {
     const row = mapRecordToRow_(record, headers);
 
     sheet.appendRow(row);
+    SpreadsheetApp.flush();
+
+    let emailAlertError = null;
+    try {
+      sendEmailAlert();
+    } catch (error) {
+      emailAlertError = String(error && error.message ? error.message : error);
+      Logger.log("sendEmailAlert failed: " + emailAlertError);
+    }
 
     return jsonResponse_({
       ok: true,
@@ -138,6 +150,8 @@ function doPost(e) {
       submissionType: record.submissionType,
       type: record.type,
       submittedAt: record.submittedAt,
+      emailAlertSent: !emailAlertError,
+      emailAlertError: emailAlertError,
     });
   } catch (error) {
     return jsonResponse_({
@@ -244,7 +258,7 @@ function validateRecord_(record) {
 
   if (
     (record.submissionType === "eventStyling" ||
-      record.submissionType === "balloonStyling" ||
+      record.submissionType === "balloonInstallation" ||
       record.submissionType === "offer") &&
     !isValidTimeRange_(record.eventStartTime, record.eventEndTime)
   ) {
@@ -349,7 +363,7 @@ function headerToKey_(header) {
     eventendtime: "eventEndTime",
     venueaddress: "venueAddress",
     venuetype: "venueType",
-    evenththeme: "eventTheme",
+    eventtheme: "eventTheme",
     package: "package",
     packageselected: "package",
     cost: "cost",
@@ -424,4 +438,205 @@ function jsonResponse_(payload) {
   return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(
     ContentService.MimeType.JSON,
   );
+}
+
+function sendEmailAlert() {
+  const emailContent = `
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Consultation Notification</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff7f2;
+        font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      .wrapper {
+        width: 100%;
+        background: linear-gradient(180deg, #fff7f2 0%, #ffe9df 100%);
+        padding: 28px 12px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border: 0px solid #f2d5c8;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #f48b72 0%, #e9696b 100%);
+        color: #ffffff;
+        text-align: center;
+        padding: 28px 24px 22px;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+      }
+
+      .header p {
+        margin: 10px 0 0;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .content {
+        padding: 26px 24px 16px;
+        color: #5a3d35;
+      }
+
+      .greeting {
+        margin: 0 0 12px;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+
+      .body-text {
+        margin: 0 0 12px;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .note-card {
+        margin: 18px 0;
+        border: 1px solid #f1d6ca;
+        border-left: 5px solid #ef886f;
+        border-radius: 12px;
+        background-color: #fffaf7;
+        padding: 14px 14px 12px;
+      }
+
+      .note-title {
+        margin: 0 0 6px;
+        font-size: 13px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        color: #ae5f4b;
+        font-weight: 700;
+      }
+
+      .note-copy {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .footer {
+        border-top: 1px solid #f2dfd6;
+        padding: 16px 24px 22px;
+        color: #8c6b62;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .signature {
+        margin-top: 14px;
+        color: #6f463d;
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 700;
+      }
+
+      @media only screen and (max-width: 640px) {
+        .header h1 {
+          font-size: 24px;
+        }
+
+        .content,
+        .footer,
+        .header {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .body-text,
+        .note-copy {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <span
+      style="
+        display: none;
+        font-size: 1px;
+        color: #fff7f2;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+      "
+    >
+      New consultation request received with love and excitement.
+    </span>
+
+    <table role="presentation" width="100%" class="wrapper">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="container">
+            <tr>
+              <td class="header">
+                <h1>Love, a new consultation is here!</h1>
+                <p>Your creative magic is needed once again.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="content">
+                <p class="greeting">Hi beautiful,</p>
+                <p class="body-text">
+                  You just received a new consultation request. Another family
+                  is excited for the special touch only you can bring.
+                </p>
+
+                <div class="note-card">
+                  <p class="note-title">Quick Reminder</p>
+                  <p class="note-copy">
+                    Take a joyful breath, review the details, and have fun
+                    bringing this celebration to life.
+                  </p>
+                </div>
+
+                <p class="body-text">
+                  Rooting for you always. Your work turns ordinary spaces into
+                  unforgettable memories.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="footer"><span class="signature">xoxo</span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+`;
+
+  MailApp.sendEmail({
+    to: "jovira.sudo@gmail.com, ravinvasudev@gmail.com",
+    subject: "Notification: JOVIRA | New Consultation Request",
+    htmlBody: emailContent,
+  });
 }

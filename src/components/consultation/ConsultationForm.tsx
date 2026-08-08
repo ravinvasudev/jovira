@@ -2,18 +2,18 @@
 
 import { AddressAutocomplete } from "@/components/ux/AddressAutocomplete";
 import {
-  eventTypes,
-  hearAboutOptions,
-  venueTypes,
+    eventTypes,
+    hearAboutOptions,
+    venueTypes,
 } from "@/data/consultation-options";
 import {
-  getInspirationItemFromSource,
-  getInspirationOfferPricing,
+    getInspirationItemFromSource,
+    getInspirationOfferPricing,
 } from "@/data/inspiration-items";
 import {
-  formatCadCurrency,
-  getPackagePricingForJourney,
-  getPackagesForJourney,
+    formatCadCurrency,
+    getPackagePricingForJourney,
+    getPackagesForJourney,
 } from "@/data/package-pricing";
 import { parseConsultationIntent } from "@/lib/consultation-intent";
 import { journeyLabels, type JourneyType } from "@/types/consultation";
@@ -105,7 +105,7 @@ const pathChoices: Array<{
       "Best if you’re ready to book full event styling at your venue.",
   },
   {
-    id: "balloonStyling",
+    id: "balloonInstallation",
     title: "Book Balloon Installation Service",
     description:
       "Best if you’re ready to book full balloon installation at your venue.",
