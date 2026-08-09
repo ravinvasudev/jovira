@@ -127,7 +127,7 @@ export const inspirationItems: InspirationItem[] = [
   },
   {
     id: "onderfull_year",
-    title: "A BEAT-Y ONE-DERFUL YEAR",
+    title: "A BEAR-Y ONE-DERFUL YEAR",
     description:
       "A celebration as sweet as childhood dreams.Soft blues, warm caramel tones, and whimsical details came together to create this ONE-derful Year celebration for little Atharv. From the charming hot air balloon to the organic balloon installation, every element was thoughtfully designed to make this milestone truly unforgettable.",
     palette: "dusty blue, sand white, Brown",
