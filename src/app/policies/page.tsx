@@ -1,37 +1,11 @@
+import { companyMetadata } from "@/data/company";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Policies Hub | JOVIRA",
-  description:
-    "Browse JOVIRA's policy pages and FAQs for event styling and decoration services in Canada.",
+  title: companyMetadata.pages.policies.title,
+  description: companyMetadata.pages.policies.description,
 };
-
-const policyLinks = [
-  {
-    href: "/terms",
-    title: "Terms of Service",
-    description:
-      "Service conditions, booking scope, and customer responsibilities.",
-  },
-  {
-    href: "/privacy-policy",
-    title: "Privacy Policy",
-    description:
-      "How we collect and use information submitted through our forms.",
-  },
-  {
-    href: "/refund-policy",
-    title: "Refund Policy",
-    description:
-      "How cancellations, rescheduling, and refund reviews are handled.",
-  },
-  {
-    href: "/faqs",
-    title: "FAQs",
-    description: "Answers to common service, package, and booking questions.",
-  },
-] as const;
 
 export default function PoliciesPage() {
   return (
@@ -56,7 +30,7 @@ export default function PoliciesPage() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {policyLinks.map((link) => (
+          {companyMetadata.policiesHubLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

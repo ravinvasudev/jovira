@@ -399,6 +399,50 @@ function hasInvalidPackage(payload: IntakePayload, formType: JourneyType) {
   return !isPackageAllowedForJourney(formType, payload.packageChoice);
 }
 
+const sheetsWebhookTimeoutMs = 10_000;
+
+// Apps Script must be awaited: on serverless the function is torn down as soon
+// as the response returns, which silently drops fire-and-forget requests.
+async function postToSheetsWebhook(
+  webhookUrl: string,
+  record: Record<string, unknown>,
+) {
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(record),
+      redirect: "follow",
+      signal: AbortSignal.timeout(sheetsWebhookTimeoutMs),
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      console.error(
+        "Google Sheets webhook returned an error status",
+        response.status,
+        responseText,
+      );
+      return;
+    }
+
+    try {
+      const result = JSON.parse(responseText) as { ok?: boolean };
+      if (result?.ok === false) {
+        console.error("Google Sheets webhook rejected submission", result);
+      }
+    } catch {
+      console.error(
+        "Google Sheets webhook returned a non-JSON response",
+        responseText.slice(0, 500),
+      );
+    }
+  } catch (error) {
+    console.error("Google Sheets webhook failed", error);
+  }
+}
+
 export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
   const fromEmail =
@@ -559,41 +603,35 @@ export async function POST(request: Request) {
     });
 
     if (sheetsWebhookUrl) {
-      fetch(sheetsWebhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: journeyLabels[payload.formType],
-          submissionType: payload.formType,
-          name: payload.fullName,
-          email: payload.email,
-          phoneNumber: payload.contactNumber,
-          eventType: payload.eventType,
-          eventDate: payload.eventDate,
-          eventStartTime: payload.eventStartTime,
-          eventEndTime: payload.eventEndTime,
-          venueAddress: payload.venueAddress,
-          venueType: payload.venueType,
-          eventTheme: payload.eventTheme,
-          package: payload.packageChoice,
-          cost: pricing?.cost ?? payload.cost,
-          discount: pricing?.discount ?? payload.discount,
-          discountPercent: pricing?.discountPct ?? payload.discountPercent,
-          effectiveCost: pricing?.effectiveCost ?? payload.effectiveCost,
-          delivery: payload.delivery,
-          pickupDate: payload.pickupDate,
-          pickupTime: payload.pickupTime,
-          deliveryDate: payload.deliveryDate,
-          deliveryTime: payload.deliveryTime,
-          whereDidYouHearAboutUs: payload.hearAbout,
-          referralCode: payload.referralCode,
-          joviraGiftCardOrVoucher: payload.giftCardOrVoucher,
-          additionalInformation: payload.additionalNotes,
-          entrySource: payload.entrySource,
-          submittedAt: new Date().toISOString(),
-        }),
-      }).catch((error: unknown) => {
-        console.error("Google Sheets webhook failed", error);
+      await postToSheetsWebhook(sheetsWebhookUrl, {
+        type: journeyLabels[payload.formType],
+        submissionType: payload.formType,
+        name: payload.fullName,
+        email: payload.email,
+        phoneNumber: payload.contactNumber,
+        eventType: payload.eventType,
+        eventDate: payload.eventDate,
+        eventStartTime: payload.eventStartTime,
+        eventEndTime: payload.eventEndTime,
+        venueAddress: payload.venueAddress,
+        venueType: payload.venueType,
+        eventTheme: payload.eventTheme,
+        package: payload.packageChoice,
+        cost: pricing?.cost ?? payload.cost,
+        discount: pricing?.discount ?? payload.discount,
+        discountPercent: pricing?.discountPct ?? payload.discountPercent,
+        effectiveCost: pricing?.effectiveCost ?? payload.effectiveCost,
+        delivery: payload.delivery,
+        pickupDate: payload.pickupDate,
+        pickupTime: payload.pickupTime,
+        deliveryDate: payload.deliveryDate,
+        deliveryTime: payload.deliveryTime,
+        whereDidYouHearAboutUs: payload.hearAbout,
+        referralCode: payload.referralCode,
+        joviraGiftCardOrVoucher: payload.giftCardOrVoucher,
+        additionalInformation: payload.additionalNotes,
+        entrySource: payload.entrySource,
+        submittedAt: new Date().toISOString(),
       });
     }
 

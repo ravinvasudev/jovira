@@ -1,12 +1,12 @@
 import { PolicyList } from "@/components/policies/PolicyBlocks";
 import { PolicyPageShell } from "@/components/policies/PolicyPageShell";
+import { companyMetadata } from "@/data/company";
 import { termsOfServiceBlocks } from "@/data/site-policies";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | JOVIRA",
-  description:
-    "Read JOVIRA's Terms of Service for event styling and decoration services in Canada.",
+  title: companyMetadata.pages.terms.title,
+  description: companyMetadata.pages.terms.description,
 };
 
 export default function TermsPage() {

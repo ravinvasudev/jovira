@@ -7,21 +7,20 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { InspirationSection } from "@/components/sections/InspirationSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { SectionDivider } from "@/components/ux/SectionDivider";
+import { company, companyMetadata } from "@/data/company";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
-  description:
-    "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
+  title: companyMetadata.pages.home.title,
+  description: companyMetadata.pages.home.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
-    description:
-      "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
-    url: "https://www.jovira.ca/",
-    siteName: "JOVIRA",
+    title: companyMetadata.openGraph.home.title,
+    description: companyMetadata.openGraph.home.description,
+    url: `${company.siteUrl}/`,
+    siteName: company.name,
     type: "website",
   },
 };

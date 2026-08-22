@@ -553,6 +553,7 @@ export function ConsultationForm() {
   const [isIntentFlow, setIsIntentFlow] = useState(false);
   const [packageLocked, setPackageLocked] = useState(false);
   const intentSignatureRef = useRef("");
+  const [intentResetToken, setIntentResetToken] = useState(0);
   const [formData, setFormData] = useState<FormData>(createInitialFormData());
 
   const resetConsultationForm = useCallback(() => {
@@ -565,6 +566,7 @@ export function ConsultationForm() {
     setPackageLocked(false);
     intentSignatureRef.current = "";
     setFormData(createInitialFormData());
+    setIntentResetToken((token) => token + 1);
   }, []);
 
   useEffect(() => {
@@ -574,9 +576,9 @@ export function ConsultationForm() {
       return;
     }
 
-    // Allow restarting from CTA/intent even when query signature matches
-    // a previously completed submission.
-    if (signature === intentSignatureRef.current && !submitted) {
+    // resetConsultationForm clears the ref, which is what allows a CTA click to
+    // restart the same intent without changing the query string.
+    if (signature === intentSignatureRef.current) {
       return;
     }
 
@@ -603,7 +605,7 @@ export function ConsultationForm() {
       setFormData(initialData);
       intentSignatureRef.current = signature;
     });
-  }, [inspirationOffer, parsedIntent, searchParams, submitted]);
+  }, [inspirationOffer, intentResetToken, parsedIntent, searchParams]);
 
   useEffect(() => {
     if (!submitted) {

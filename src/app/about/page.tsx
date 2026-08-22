@@ -1,11 +1,12 @@
 import { SectionDivider } from "@/components/ux/SectionDivider";
 import { aboutUsContent } from "@/data/about-us";
+import { companyMetadata } from "@/data/company";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | JOVIRA",
-  description: "Learn more about JOVIRA, our mission, and how we operate.",
+  title: companyMetadata.pages.about.title,
+  description: companyMetadata.pages.about.description,
 };
 
 const policyNavLinks = [

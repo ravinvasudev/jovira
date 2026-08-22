@@ -1,11 +1,11 @@
+import { companyMetadata } from "@/data/company";
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "JOVIRA",
-    short_name: "JOVIRA",
-    description:
-      "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
+    name: companyMetadata.manifest.name,
+    short_name: companyMetadata.manifest.shortName,
+    description: companyMetadata.manifest.description,
     lang: "en-CA",
     orientation: "portrait",
     categories: [

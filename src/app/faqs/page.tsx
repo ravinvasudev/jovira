@@ -1,12 +1,12 @@
 import { FaqAccordion } from "@/components/policies/PolicyBlocks";
 import { PolicyPageShell } from "@/components/policies/PolicyPageShell";
+import { companyMetadata } from "@/data/company";
 import { faqItems } from "@/data/site-policies";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQs | JOVIRA",
-  description:
-    "Frequently asked questions about JOVIRA event styling, balloon decor, and Grab 'n Go packages in Canada.",
+  title: companyMetadata.pages.faqs.title,
+  description: companyMetadata.pages.faqs.description,
 };
 
 export default function FaqsPage() {

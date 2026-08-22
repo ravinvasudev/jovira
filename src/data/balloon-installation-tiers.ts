@@ -55,7 +55,7 @@ export const balloonInstallationTiers: PackageTier[] = [
       "7ft W × 7ft H (approx.) fully styled finish",
       "One medium and one large backdrop for a layered entrance-to-photo-wall look",
       "Shimmer wall accent panel for extra light and glamour",
-      "7 ft hand-tied organic balloon garland",
+      "Hand-tied organic balloon garland",
       "Premium balloons in up to 4 curated colours",
       "Welcome sign styled to match your theme",
       "Delivery, professional setup & takedown",

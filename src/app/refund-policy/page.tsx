@@ -1,12 +1,12 @@
 import { PolicyList } from "@/components/policies/PolicyBlocks";
 import { PolicyPageShell } from "@/components/policies/PolicyPageShell";
+import { companyMetadata } from "@/data/company";
 import { refundPolicyBlocks } from "@/data/site-policies";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Refund Policy | JOVIRA",
-  description:
-    "Read JOVIRA's refund terms for custom event styling, prepared decor items, and booking changes.",
+  title: companyMetadata.pages.refundPolicy.title,
+  description: companyMetadata.pages.refundPolicy.description,
 };
 
 export default function RefundPolicyPage() {

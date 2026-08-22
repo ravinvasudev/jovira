@@ -1,6 +1,8 @@
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SectionChoreography } from "@/components/ux/SectionChoreography";
+import { company, companyMetadata } from "@/data/company";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
@@ -21,10 +23,9 @@ const bodyFont = Jost({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.jovira.ca"),
-  title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
-  description:
-    "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
+  metadataBase: new URL(company.siteUrl),
+  title: companyMetadata.pages.home.title,
+  description: companyMetadata.pages.home.description,
   keywords: [
     "Event Styling",
     "Balloon Installation",
@@ -47,11 +48,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "JOVIRA | Event Styling & Balloon Installation · Fredericton, NB",
-    description:
-      "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
-    url: "https://www.jovira.ca",
-    siteName: "JOVIRA",
+    title: companyMetadata.openGraph.home.title,
+    description: companyMetadata.openGraph.home.description,
+    url: company.siteUrl,
+    siteName: company.name,
     locale: "en_CA",
     type: "website",
   },
@@ -63,12 +63,11 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "JOVIRA",
-  url: "https://www.jovira.ca",
-  logo: "https://www.jovira.ca/jovira-mark.svg",
-  image: "https://www.jovira.ca/jovira-mark.svg",
-  description:
-    "Custom balloon décor, event styling, and grab-and-go packages for birthdays and celebrations in Fredericton, Oromocto, New Maryland, and Hanwell, NB.",
+  name: company.name,
+  url: company.siteUrl,
+  logo: `${company.siteUrl}/jovira-mark.svg`,
+  image: `${company.siteUrl}/jovira-mark.svg`,
+  description: companyMetadata.site.description,
   priceRange: "$$",
   areaServed: [
     {
@@ -118,6 +117,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <ChatWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

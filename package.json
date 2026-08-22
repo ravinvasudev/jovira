@@ -9,11 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/groq": "^4.0.29",
+    "@ai-sdk/react": "^4.0.76",
     "@vercel/analytics": "^2.0.1",
+    "ai": "^7.0.73",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.7.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "resend": "^6.18.1"
   },
   "devDependencies": {
